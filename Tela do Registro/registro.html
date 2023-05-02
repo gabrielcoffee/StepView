@@ -1,114 +1,56 @@
-body{
-    margin: 0;
-    padding: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StepView</title>
+    <link rel="stylesheet" href="registro.css">
+</head>
+<body>
+    <div class="container">
+        <div class="registro">
+            <div class="registro_icone">
+                <div class="icone">
+                    
+                </div>
+            </div>
+            <form>
+                <div class="form_inputs">
+                    <input type="text" name="id" id="id" placeholder="Id">
+                    <input type="text" name="nome" id="name" placeholder="Nome">
+                    <input type="text" name="email" id="email" placeholder="E-mail">
+                    <input type="text" name="sexo" id="sexo" placeholder="Sexo">
+                    <input type="text" name="dataCadastro" id="dataCadastro" placeholder="Data Cadastro">
+                </div>
+                <div class="form_botoes">
+                    <button type="" id="">Criar</button>
+                    <button type="" id="">Alterar</button>
+                    <button type="" id="">Excluir</button>
+                </div>
+            </form>
+            
 
-}
+        </div>
 
-.container
-{
-    margin: 0;
-    padding: 0;
+        <div class="pesquisa">
+            <div class="barra_de_pesquisa">
+                <input type="text" id="barra_de_pesquisa" placeholder="Pesquisar" name="pesquisar">
+            </div>
+        </div>
 
-    width: 100vw;
-    height: 100vh;
-    background-color: rgb(141, 227, 227);
+        <div class="comentario">
+            <div class="comentario_texto">
+                <input type="text" name="comentarios" id="comentario">
+            </div>
+            <div class="comentario_botoes">
+                <button type="button">+</button>
+            </div>
+        </div>
+
+
+    </div>
     
-    display: grid;
-    grid-template-columns: 550px 700px;
-    grid-template-rows: 1fr 4fr;
-    grid-template-areas: 
-    "registro pesquisa"
-    "registro comentario";
-}
-
-/*------------------------------Area do Registro------------------------*/
-
-.registro 
-{
-    grid-area: registro;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    background-color: antiquewhite;
-}
-
-.registro_icone
-{
-    border: 2px solid black;
-    background-color: blue;
-    width: 60px;
-    height: 60px;
-    margin: 25px;
-    border-radius: 50%;
     
-}
-
-.icone
-{
-
-}
-
-form
-{
-    width: 450px;
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-}
-
-.form_inputs
-{
-    
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-
-}
-
-.form_inputs > input
-{
-    border: none;
-    height: 30px;
-    width: 210px;
-    margin: 15px;
-}
-
-.form_botoes
-{
-    width: 240px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between
-}
-
-.form_botoes > button
-{
-    border: 0;
-    width: 60px;
-    height: 30px;
-    cursor: pointer;
-
-}
-
-/*------------------------------Area da pesquisa------------------------*/
-
-.pesquisa
-{
-    grid-area: pesquisa;
-}
-
-/*------------------------------Area do comentario----------------------*/
-
-.comentario
-{
-    grid-area: comentario;
-}
+</body>
+</html>
