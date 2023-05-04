@@ -1,11 +1,10 @@
 <?php
-include "config.php"
+include "config.php";
 
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-//emailFuncionario = '$email' AND senhaFuncionario = '$senha'
-$sql = "SELECT * FROM funcionario WHERE nomeFuncionario = '$email';";
+$sql = "SELECT * FROM funcionario WHERE emailFuncionario = '$email' AND senhaFuncionario = '$senha';";
 $result = $conn->query($sql);
 
 if ($row = $result->fetch_assoc())
