@@ -13,7 +13,7 @@ if ($row = $result->fetch_assoc())
     ?>
     <script>
         alert("Funcionario logado com sucesso");
-        location.href = "tela_estados.html";
+        location.href = "TelaDosEstados/tela_estados.html";
     </script>
     <?php
 }

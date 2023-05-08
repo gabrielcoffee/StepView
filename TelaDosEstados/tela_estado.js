@@ -1,6 +1,6 @@
 function pagina_criar()
 {
-    window.location.href = "registro.html";
+    window.location.href = "PHPregistrar_cliente.php";
 }
 /*
 //Criando card do cliente.
