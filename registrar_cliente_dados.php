@@ -1,3 +1,41 @@
+<?php
+include_once "PHPconfig.php";
+
+$nome = $_POST["nome"];
+
+$id = "";
+$email = "";
+$sexo = "";
+$datacadastro = "";
+
+$sql = "SELECT * FROM cliente WHERE nomeCliente = '$nome';";
+$result = $conn->query($sql);
+
+if ($row = $result->fetch_assoc())
+{
+
+    $id = $row["idCliente"];
+    $email = $row["emailCliente"];
+    $sexo = $row["sexoCliente"];
+    $datacadastro =  $row["dataCadastro"];
+
+    ?>
+    <script>
+        alert("Cliente encontrado com sucesso");
+    </script>
+    <?php
+}
+else
+{
+    ?>
+    <script>
+        alert("Cliente não encontrado");
+        location.href = "registrar_cliente.html";
+    </script>
+    <?php
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +53,19 @@
                 
             </div>
             <div class="inputClass">
-                <input type="text" name="id" placeholder="Id">
+                <input type="text" name="id" placeholder="Id" value="<?php echo $id ?>">
             </div>
             <div class="inputClass">
-                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" name="nome" placeholder="Nome" value="<?php echo $nome ?>">
             </div>
             <div class="inputClass">
-                <input type="text" name="email" placeholder="E-mail">
+                <input type="text" name="email" placeholder="E-mail" value="<?php echo $email ?>">
             </div>
             <div class="inputClass">
-                <input type="text" name="sexo" placeholder="sexo">
+                <input type="text" name="sexo" placeholder="sexo" value="<?php echo $sexo ?>">
             </div>
             <div class="inputClass">
-                <input type="text" name="datacadastro" placeholder="Data cadastro">
+                <input type="text" name="datacadastro" placeholder="Data cadastro" value="<?php echo $datacadastro ?>">
             </div>
             <div class="InputBotao">
                 <button type="">Criar</button>
@@ -37,7 +75,7 @@
         </form>
    </div>
    <div class="lateral_direita">
-        <form class="form_buscar" method="POST" action="registrar_cliente_dados.php">
+        <form class="form_buscar" method="POST" action="PHPbuscar_cliente.php">
             <input type="text" name="nome" placeholder="Nome do Cliente">
             <button type="">Buscar</button>
         </form>

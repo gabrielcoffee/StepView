@@ -1,7 +1,4 @@
-function pagina_criar()
-{
-    location.href = "registrar_cliente.html";
-}
+
 /*
 //Criando card do cliente.
 var cardCliente = document.createElement("div");
