@@ -1,10 +1,10 @@
 <?php
 include "config.php";
 
-$email = $_POST["email"];
+$id = $_POST["id"];
 $senha = $_POST["senha"];
 
-$sql = "SELECT * FROM funcionario WHERE emailFuncionario = '$email' AND senhaFuncionario = '$senha';";
+$sql = "SELECT * FROM funcionario WHERE idFuncionario = '$id' AND senhaFuncionario = '$senha';";
 $result = $conn->query($sql);
 
 if ($row = $result->fetch_assoc())
@@ -21,7 +21,7 @@ else
 {
     ?>
     <script>
-        alert("Funcionario não registrado");
+        alert("Funcionario não encontrado");
         location.href = "main.html";
     </script>
     <?php
