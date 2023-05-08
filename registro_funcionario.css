@@ -3,14 +3,20 @@
 body{
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-columns: 30vw 30vw;
+    gap: 15px;
+  
+    
+
+    
    
 
     margin: 0;
-    background: #FFFAEB;
+    background: #E1E6FA;
     border: 0;
     box-sizing: border-box;
-    padding: 0;
+    padding: 115px 290px;
 
     font-family: 'Roboto Slab', serif;
 }
@@ -20,35 +26,40 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 
 }
 
 .inputs {
     border-radius: 5%;
-    width: 80%;
-    height: 90%;
-    background: #B2935B;
+    width: 25vw;
+    height: 50vh;
+    background: #E1E6FA;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    border: 2px solid #183152;   
 }
+
+
 
 
 .inputClass > input {
     font-size: 20px;
     font: "open sans extra bold";
     margin: 20px;
-    background: #B2935B;
+    background: #E1E6FA;
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0);;
+
     
 }
 
 .InputBotao > button {
-    background: #FFFAEB;
+    background: #183152;
+    color: white;
     border-radius: 10%;
     font-size: 20px;
     border: 0;
@@ -56,27 +67,13 @@ body{
     padding: 10px;
 
 }
-
-
-
-
-
-.bola {
+.lateral_direita
+{
     display: flex;
-    background-color: #000000;
-    border-radius: 50%;
-    width: 25%;
-    height: 20%;
     justify-content: center;
     align-items: center;
-    margin: 5px;
 }
 
-.lateral_direita{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
 
-}
+

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+body{
+    margin: 0;
+    background: #FFFAEB;
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+
+.container {
+    background: #FBEAB4;
+    width: 70vw;
+    height: 70vh;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tela_esquerda {
+    
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.imagem > img {
+    width: 100%;
+}
+
+
+
+.tela_direita {
+    
+    width: 50%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cabecalho{
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.cabecalho > h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho > a {
+    text-decoration:none;   
+}
+
+
+
+.login > input {
+    font-size: 20px;
+    font: "open sans extra bold";
+    margin: 20px;
+    background: #FBEAB4;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);;
+}
+
+.login > button {
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 20px;
+    border: 0;
+    margin: 30px;
+    padding: 10px;
+
+}
+
+
+.bola {
+    
+}
