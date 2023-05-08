@@ -7,7 +7,7 @@ body{
     grid-template-columns: 5fr 6fr;
 
     margin: 0;
-    background: #FFFAEB;
+    background: #E1E6FA;
     border: 0;
     box-sizing: border-box;
     padding: 0;
@@ -28,7 +28,7 @@ body{
     border-radius: 5%;
     width: 80%;
     height: 90%;
-    background: #B2935B;
+    background: #c5cce9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,7 +41,7 @@ body{
     font-size: 20px;
     font: "open sans extra bold";
     margin: 20px;
-    background: #B2935B;
+    background: #c5cce9;
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0);;
     
