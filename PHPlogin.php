@@ -1,5 +1,5 @@
 <?php
-include "config.php";
+include_once "PHPconfig.php";
 
 $id = $_POST["id"];
 $senha = $_POST["senha"];
