@@ -1,5 +1,5 @@
 <?php
-include_once "config.php";
+include_once "PHPconfig.php";
 
 $id = $_POST["id"];
 $nome = $_POST["nome"];
@@ -22,6 +22,12 @@ if ($result === TRUE) {
     <?php
 
 } else {
+    ?>
+    <script>
+        alert("Erro de conexão com servidor, voltando a tela principal");
+        location.href = "main.html";
+    </script>
+    <?php
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
