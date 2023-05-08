@@ -75,7 +75,7 @@ else
         </form>
    </div>
    <div class="lateral_direita">
-        <form class="form_buscar" method="POST" action="PHPbuscar_cliente.php">
+        <form class="form_buscar" method="POST" action="registrar_cliente_dados.php">
             <input type="text" name="nome" placeholder="Nome do Cliente">
             <button type="">Buscar</button>
         </form>
