@@ -2,26 +2,20 @@
 include_once "config.php";
 session_start();
 
-$cpf      = $_POST["cpfcrudform"];
-$username = $_POST["namecrudform"];
-$endereco = $_POST["enderecocrudform"];
-$email    = $_POST["emailcrudform"];
-$telefone = $_POST["telefonecrudform"];
-$password = $_POST["passwordcrudform"];
-$birth    = $_POST["birthcrudform"];
+$id    = $_POST["id"];
+$senha = $_POST["senha"];
 
-$query = "INSERT INTO Usuario(cpf, nome, endereco, email, pontos, telefone, senha, dat_nasc, imagem)
- VALUES ('$cpf', '$username', '$endereco', '$email', '0', '$telefone', '$password', '$birth', NULL);";
+$query = "INSERT INTO funcionario(idFuncionario, senhaFuncionario )
+ VALUES ('$id', '$senha');";
 
 $result = $conn->query($query);
 
 if ($result === TRUE) {
-    $_SESSION["logged"] = $cpf;
     
     ?>
     <script>
-        alert("Usuario cadastrado com sucesso!");
-        location.href = "home.php";
+        alert("Funcionario cadastrado com sucesso!");
+        location.href = "main.php";
     </script>
     <?php
 

@@ -1,27 +1,23 @@
 <?php
 include_once "config.php";
-session_start();
 
-$cpf      = $_POST["cpfcrudform"];
-$username = $_POST["namecrudform"];
-$endereco = $_POST["enderecocrudform"];
-$email    = $_POST["emailcrudform"];
-$telefone = $_POST["telefonecrudform"];
-$password = $_POST["passwordcrudform"];
-$birth    = $_POST["birthcrudform"];
+$id = $_POST["id"];
+$nome = $_POST["nome"];
+$email = $_POST["email"];
+$sexo = $_POST["sexo"];
+$data_cadastro = $_POST["datacadastro"];
 
-$query = "INSERT INTO Usuario(cpf, nome, endereco, email, pontos, telefone, senha, dat_nasc, imagem)
- VALUES ('$cpf', '$username', '$endereco', '$email', '0', '$telefone', '$password', '$birth', NULL);";
+$query = "INSERT INTO cliente(idCliente, nomeCliente, emailCliente, sexoCliente, dataCadastro)
+ VALUES ('$id', '$nome', '$email', '$sexo', '$data_cadastro');";
 
 $result = $conn->query($query);
 
 if ($result === TRUE) {
-    $_SESSION["logged"] = $cpf;
     
     ?>
     <script>
-        alert("Usuario cadastrado com sucesso!");
-        location.href = "home.php";
+        alert("Cliente cadastrado com sucesso!");
+        location.href = "TelaDosEstados/tela_estados.html";
     </script>
     <?php
 
