@@ -22,13 +22,16 @@
                     <input type="text" name="email" placeholder="E-mail">
                 </div>
                 <div class="inputClass">
-                    <input type="text" name="datacadastro" placeholder="Data cadastro">
+                    <input type="date" name="datanascimento" placeholder="Data Nascimento">
                 </div>
                 <fieldset class="InputCheckbox">
                     <legend>Sexo do cliente</legend>
-                    <input type="checkbox" name="sexo" ">Masculino
-                    <input type="checkbox" name="sexo" ">Feminino   
-                    <input type="checkbox" name="sexo" ">Outro
+                    <input type="radio" id="Masculino" name="sexo" value="M">
+                    <label for="Masculino">Masculino</label>
+                    <input type="radio" id="Feminino" name="sexo" value="F">
+                    <label for="Feminino">Feminino</label> 
+                    <input type="radio" id="Outros" name="sexo" value="O">
+                    <label for="Outros">Outro</label>
                 </fieldset>
                 <div class="InputBotao">
                     <button type="">Criar</button>
