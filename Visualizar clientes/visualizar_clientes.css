@@ -14,6 +14,7 @@ body
 
     width: 100vw;
     height: 100vh;
+    background-color: #ABC8E2;
 
     font-family: 'Roboto Slab', serif;
 }
@@ -22,8 +23,8 @@ body > h1
 {
     
     align-self: center;
-
-
+    color:aliceblue;
+    border-bottom: solid;
 
 }
 
@@ -36,34 +37,57 @@ body > h1
     height: 80%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-color: #E1E6FA;
+    border-radius: 15px;
 }
 
 .container > button
 {
     width: 5vw;
     height: 5vh;
+    align-self: flex-start;
+    margin: 5px;
+    background-color: #FFFAEB;
+
+    border-radius: 15px;
+    border: none;
+    
 }
 
 
 
 .nome_tabela > th
 {
-    background-color: aquamarine;
+    background-color: #183152;
+    color: white;
     width: 15vw;
     height: 4vh;
     
     
 }
 
+
+
+table
+{
+
+
+ 
+}
+
+
+
 td
 {
 
-    background-color: bisque;
+    background-color: #375D81;
+    color: white;
     width: 60vw;
     height: 5vh;
+    
 
 }
 
@@ -84,9 +108,114 @@ td
     margin: 0 10px;
     border-radius: 15px;
     border: none;
+    background-color: #FFFAEB;
+    color: #183152;
 }
 
 .container > button 
 {
     width: 10vw;
+    color:#183152;
+}
+
+/*------------------------------------------TELA DO CADASTRO-------------*/
+
+.tela_cadastro
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tela_cadastro > h1 
+{
+    color:rgb(0, 0, 0);
+    border-bottom: solid;
+}
+
+form
+{
+    background-color: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 20vw;
+    height: 52vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+
+.inputs {
+    border-radius: 5%;
+    width: 80%;
+    height: 90%;
+    background: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.inputClass > input {
+    font-size: 20px;
+    font: "open sans extra bold";
+    margin: 20px;
+    background: #c5cce9;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);;
+    
+}
+
+.InputBotao > button {
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 20px;
+    border: 0;
+    margin: 15px;
+    padding: 10px;
+
+}
+
+
+.tela_cadastro.ola
+{
+    display: flex;
+    
+   
+}
+
+
+
+
+.botaoSair
+{
+    display: flex;
+    justify-content: center;
+
+
+    background-color: #c5cce9;
+    width: 20vw;
+    height: 10vh;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.botaoSair > button
+{
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 20px;
+    border: 0;
+    margin: 15px;
+    padding: 10px;
 }

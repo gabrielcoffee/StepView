@@ -8,10 +8,43 @@
     <title>StepView</title>
 </head>
 <body>
+    <div class="tela_cadastro">
+        <h1>Cadastrar</h1>
+        <div class="modal">
+            <form action="" method="POST">
+                <div class="inputClass">
+                    <input type="text" name="id" placeholder="Id">
+                </div>
+                <div class="inputClass">
+                    <input type="text" name="nome" placeholder="Nome">
+                </div>
+                <div class="inputClass">
+                    <input type="text" name="email" placeholder="E-mail">
+                </div>
+                <div class="inputClass">
+                    <input type="text" name="datacadastro" placeholder="Data cadastro">
+                </div>
+                <fieldset class="InputCheckbox">
+                    <legend>Sexo do cliente</legend>
+                    <input type="checkbox" name="sexo" ">Masculino
+                    <input type="checkbox" name="sexo" ">Feminino   
+                    <input type="checkbox" name="sexo" ">Outro
+                </fieldset>
+                <div class="InputBotao">
+                    <button type="">Criar</button>
+                </div>
+            </form>
+        </div>
+        <div class="botaoSair">
+            <button onclick="sairModal()">Sair</button>
+        </div>
+        
+    </div>
     <h1>Clientes</h1>
     <div class="container">
+        <button onclick="abrirModal()" class="botaoCriar">Criar</button>
         <table>
-            <button>Criar</button>
+            
             <tr class="nome_tabela">
                 <th>Nome</th>
                 <th>E-mail</th>
