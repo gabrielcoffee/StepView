@@ -1,4 +1,6 @@
 const tela = document.querySelector(".tela_cadastro")
+const telaEditar = document.querySelector(".tela_editar")
+
 
 
 function abrirModal()
@@ -9,7 +11,15 @@ function abrirModal()
 function sairModal()
 {
     tela.classList.remove("ola")
+    telaEditar.classList.remove("ola")
 }
+
+function abrirEditar(){
+    telaEditar.classList.add("ola")
+}
+
+
+
 
 
 

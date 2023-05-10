@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="visualizar_clientes.css">
     <title>StepView</title>
 </head>
+
 <body>
     <div class="tela_cadastro">
         <h1>Cadastrar</h1>
@@ -29,7 +31,7 @@
                     <input type="radio" id="Masculino" name="sexo" value="M">
                     <label for="Masculino">Masculino</label>
                     <input type="radio" id="Feminino" name="sexo" value="F">
-                    <label for="Feminino">Feminino</label> 
+                    <label for="Feminino">Feminino</label>
                     <input type="radio" id="Outros" name="sexo" value="O">
                     <label for="Outros">Outro</label>
                 </fieldset>
@@ -38,38 +40,74 @@
                 </div>
             </form>
         </div>
-        <div class="botaoSair">
-            <button onclick="sairModal()">Sair</button>
-        </div>
-        
-    </div>
-    <h1>Clientes</h1>
-    <div class="container">
-        <button onclick="abrirModal()" class="botaoCriar">Criar</button>
-        <table>
-            
-            <tr class="nome_tabela">
-                <th>Nome</th>
-                <th>E-mail</th>
-                <th>Telefone</th>
-                <th>Sexo</th>
-                <th>Contrato</th>
-                <th>Selecionar</th>
-            </tr>
-            <tr class="info_tabela">
-                <td class="td_principal">Nicolas</td>
-                <td class="td_principal">nicoas@gmail.com</td>
-                <td class="td_principal">41998141454</td>
-                <td class="td_principal">Masculino</td>
-                <td class="td_principal">05/02/2002</td>
-                <td class="checkBox"> <button>Editar</button> <button>Deletar</button> </td>
-            </tr>
-        </table>
-        
+            <div class="botaoSair">
+                <button onclick="sairModal()">Sair</button>
+            </div>
 
-    </div>
+        </div>
+        <div class="tela_editar">
+            <h1>Editar</h1>
+            <div class="modalEditar">
+                <form action="" method="POST">
+                    <div class="inputClass">
+                        <input type="text" name="id" placeholder="Id">
+                    </div>
+                    <div class="inputClass">
+                        <input type="text" name="nome" placeholder="Nome">
+                    </div>
+                    <div class="inputClass">
+                        <input type="text" name="email" placeholder="E-mail">
+                    </div>
+                    <div class="inputClass">
+                        <input type="date" name="datanascimento" placeholder="Data Nascimento">
+                    </div>
+                    <fieldset class="InputCheckbox">
+                        <legend>Sexo do cliente</legend>
+                        <input type="radio" id="Masculino" name="sexo" value="M">
+                        <label for="Masculino">Masculino</label>
+                        <input type="radio" id="Feminino" name="sexo" value="F">
+                        <label for="Feminino">Feminino</label>
+                        <input type="radio" id="Outros" name="sexo" value="O">
+                        <label for="Outros">Outro</label>
+                    </fieldset>
+                    <div class="InputBotao">
+                        <button type="">Criar</button>
+                    </div>
+                </form>
+            </div>
+                <div class="botaoSair">
+                    <button onclick="sairModal()">Sair</button>
+                </div>
+    
+            </div>
+        <h1>Clientes</h1>
+        <div class="container">
+            <button onclick="abrirModal()" class="botaoCriar">Criar</button>
+            <table>
+
+                <tr class="nome_tabela">
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Sexo</th>
+                    <th>Contrato</th>
+                    <th>Selecionar</th>
+                </tr>
+                <tr class="info_tabela">
+                    <td class="td_principal">Nicolas</td>
+                    <td class="td_principal">nicoas@gmail.com</td>
+                    <td class="td_principal">41998141454</td>
+                    <td class="td_principal">Masculino</td>
+                    <td class="td_principal">05/02/2002</td>
+                    <td class="checkBox"> <button onclick="abrirEditar()">Editar</button> <button>Deletar</button> </td>
+                </tr>
+            </table>
+
+
+        </div>
 </body>
 <script src="visualizar_clientes.js">
 
 </script>
+
 </html>
