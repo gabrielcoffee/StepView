@@ -23,12 +23,10 @@ body > h1
 {
     
     align-self: center;
-    color:aliceblue;
+    color:rgb(240, 248, 255);
     border-bottom: solid;
 
 }
-
-
 
 
 .container
@@ -70,16 +68,6 @@ body > h1
     
     
 }
-
-
-
-table
-{
-
-
- 
-}
-
 
 
 td
