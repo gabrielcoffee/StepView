@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="registro_funcionario.css">
+    <link rel="stylesheet" href="../ESTILOS/registro_funcionario.css">
     <title>Registrar Funcionario</title>
 </head>
 <body>
@@ -13,25 +13,23 @@
         <form method="POST" action="PHPregistrar_funcionario.php" class="inputs">
             <h2>Registro</h2>
             <div class="inputClass">
-                <input type="text" name="id" placeholder="id">
+                <input type="text" name="cpf" placeholder="CPF" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})">
             </div>
             <div class="inputClass">
-                <input type="password" name="senha" placeholder="Senha">
+                <input type="text" placeholder="Nome" name="nome">
+            </div>
+            <div class="inputClass">
+                <input type="password" placeholder="Senha" name="senha">
             </div>
             <div class="InputBotao">
                 <button type="">Criar</button>
-                <button type="">Alterar</button>
-                <button type="">Excluir</button>
             </div>
         </form>
    </div>
    <div class="lateral_direita">
-        <img src="Pitch meeting-bro.svg">
+        <img src="../OUTROS/Pitch meeting-bro.svg">
        
    </div>
    
 </body>
-<script src="registro.js">
-
-</script>
 </html>

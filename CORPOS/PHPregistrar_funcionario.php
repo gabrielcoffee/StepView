@@ -2,11 +2,12 @@
 include_once "PHPconfig.php";
 session_start();
 
-$id    = $_POST["id"];
+$cpf = $_POST["cpf"];
+$nome = $_POST["nome"];
 $senha = $_POST["senha"];
 
-$query = "INSERT INTO funcionario(idFuncionario, senhaFuncionario )
- VALUES ('$id', '$senha');";
+$query = "INSERT INTO funcionario(cpfFuncionario, nomeFuncionario, senhaFuncionario)
+ VALUES ('$cpf', '$nome', '$senha');";
 
 $result = $conn->query($query);
 
