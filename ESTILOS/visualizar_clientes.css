@@ -76,7 +76,6 @@ body > h1
 table
 {
 
-
  
 }
 
@@ -260,6 +259,48 @@ form
 }
 
 .tela_editar.ola
+{
+    display: flex;
+    
+   
+}
+
+/*--------------------------------------------------------TELA DELETAR------------------------------------------------------------*/
+
+.tela_deletar
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tela_deletar > h1 
+{
+    color:rgb(0, 0, 0);
+    border-bottom: solid;
+}
+
+form
+{
+    background-color: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 20vw;
+    height: 52vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tela_deletar.ola
 {
     display: flex;
     

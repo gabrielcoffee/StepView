@@ -105,7 +105,7 @@
 
         <!-- MINI TELA DE DELETAR CADASTRO -->
 
-        <div class="tela_editar">
+        <div class="tela_deletar">
             <h1>Deletar</h1>
             <div class="modalEditar">
                 <form action="" method="POST">
@@ -122,7 +122,7 @@
                 </div>
     
         </div>
-        
+
         <h1>Clientes</h1>
         <div class="container">
 
