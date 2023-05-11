@@ -1,40 +1,4 @@
-<?php
-include_once "PHPconfig.php";
 
-$cpf = $_POST["cpf"];
-$nome = "";
-$email = "";
-$telefone = "";
-$sexo = "";
-$nascimento = "";
-
-$sql = "UPDATE * FROM paciente WHERE cpfPaciente = '$cpf';";
-$result = $conn->query($sql);
-
-if ($row = $result->fetch_assoc())
-{
-    $nome = $row["nomePaciente"];
-    $email = $row["emailPaciente"];
-    $telefone = $row["telefonePaciente"];
-    $sexo = $row["sexoPaciente"];
-    $nascimento = $row["nascimentoPaciente"];
-
-    ?>
-    <script>
-        alert("Cliente encontrado com sucesso");
-    </script>
-    <?php
-}
-else
-{
-    ?>
-    <script>
-        alert("Cliente não encontrado");
-        location.href = "registrar_cliente.html";
-    </script>
-    <?php
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,10 +64,6 @@ else
             <h1>Editar Cliente</h1>
             <div class="modalEditar">
                 <form action="" method="POST">
-                    <div class="inputClass">
-                        CPF:
-                        <input type="text" name="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" required>
-                    </div>
                     <div class="inputClass">
                         Nome:
                         <input type="text" name="nome" required>
