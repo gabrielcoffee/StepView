@@ -17,6 +17,10 @@ function sairModal()
     telaEditar.classList.remove("ola")
 }
 
+function abrirModalDeletar()
+{
+    tela.classList.add("ola")
+}
 
 
 

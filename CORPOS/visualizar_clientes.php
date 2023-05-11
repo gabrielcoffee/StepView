@@ -101,7 +101,27 @@
                     <button onclick="sairModal()">Sair</button>
                 </div>
     
+        </div>
+
+        <!-- MINI TELA DE DELETAR CADASTRO -->
+
+        <div class="tela_editar">
+            <h1>Deletar</h1>
+            <div class="modalEditar">
+                <form action="" method="POST">
+                    <div>
+                        <h3>Você quer deletar?</h3>
+                    </div>
+                    <div class="InputBotao">
+                        <button type="">Confirmar mudanças</button>
+                    </div>
+                </form>
             </div>
+                <div class="botaoSair">
+                    <button onclick="sairModal()">Sair</button>
+                </div>
+    
+        </div>
         <h1>Clientes</h1>
         <div class="container">
 
@@ -160,7 +180,7 @@
                     echo "<td class='td_principal'>".$telefone."</td>\n";
                     echo "<td class='td_principal'>".$sexo."</td>\n";
                     echo "<td class='td_principal'>".$nascimento."</td>\n";
-                    echo "<td class='checkBox'> <button onclick='abrirEditar()'>Editar</button> <button onclick=''>Deletar</button> </td>";
+                    echo "<td class='checkBox'> <button onclick='abrirEditar()'>Editar</button> <button onclick='abrirModalDeletar()'>Deletar</button> </td>";
                     echo "</tr>";
                 }
                 // FIM DO CÓDIGO PHP
