@@ -18,8 +18,8 @@ body{
     background-color: #E1E6FA;
 
     display: grid;
-    grid-template-columns: 50px 1860px;
-    grid-template-rows: 60px 50px 840px;
+    grid-template-columns: 2vw 98vw;
+    grid-template-rows: 3vw 3vw 94vw;
     grid-template-areas: 
     "aside header"
     "aside nav"
@@ -42,6 +42,7 @@ header
 
 }
 
+
 .barra_de_pesquisa 
 {
     
@@ -49,6 +50,7 @@ header
     justify-content: center;
     
 }
+
 
 .barra_de_pesquisa > input {
     outline: 0;
@@ -63,8 +65,8 @@ header
 .loopa
 {
     background-color: #E1E6FA;
-    width: 40px;
-    height: 40px;
+    width: 4vw;
+    height: 2vw;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -89,7 +91,10 @@ header
 
 .header_titulo >h1 {
     margin: 0px 25px;
+    font-size: 2vw ;
 }
+
+
 
 
 #-------------------------------------------NAV---------------------------------------------*/
@@ -123,6 +128,7 @@ nav
     background-color: #183152;
     border: none;
     border-radius: 50px;
+    font-size: 0.8vw;
     
 }
 
@@ -136,7 +142,7 @@ main
     
     border-radius: 2%;
     display: grid;
-    grid-template-columns: 205fr 205fr 205fr 205fr;
+    grid-template-columns: 25vw 25vw 25vw 25vw;
     grid-template-rows: auto;
     column-gap: 10px;
     
@@ -148,6 +154,18 @@ main > div{
 
 main > div > h3{
     color: #183152;
+    
+}
+
+
+.dropzone > h3
+{
+    font-size: 1vw;
+}
+
+.card > h3 
+{
+    font-size: 1vw;
 }
 
 .zona_ativada
