@@ -8,14 +8,14 @@ $sexo = $_POST["sexo"];
 $nascimento = $_POST["nascimento"];
 $telefone = $_POST["telefone"];
 
-$query = "UPDATE paciente 
-          SET nomePaciente = '$nome', emailPaciente = '$email', sexoPaciente = '$sexo', nascimentoPaciente = '$nascimento', telefonePaciente = '$telefone'
-          WHERE cpfPaciente = '$cpf';";
+$query = "UPDATE cliente
+          SET nome = '$nome', email = '$email', sexo = '$sexo', nascimento = '$nascimento', telefone = '$telefone'
+          WHERE cpf = '$cpf';";
 
 $result = $conn->query($query);
 
 if ($result === TRUE) {
-    
+
     ?>
     <script>
         alert("Cliente editado com sucesso!");

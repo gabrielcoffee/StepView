@@ -1,12 +1,12 @@
 <?php
 include_once "PHPconfig.php";
 
-$cpf = $_POST["cpf"];
+$cpf = $_GET["cpf"];
 
-$sql = "DELETE * FROM paciente WHERE cpfPaciente = '$cpf';";
+$sql = "DELETE FROM cliente WHERE cpf = '$cpf';";
 $result = $conn->query($sql);
 
-if ($row = $result->fetch_assoc())
+if ($result === TRUE)
 {
     ?>
     <script>

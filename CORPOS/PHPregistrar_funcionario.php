@@ -6,7 +6,7 @@ $cpf = $_POST["cpf"];
 $nome = $_POST["nome"];
 $senha = $_POST["senha"];
 
-$query = "INSERT INTO funcionario(cpfFuncionario, nomeFuncionario, senhaFuncionario)
+$query = "INSERT INTO funcionario (cpf, nome, senha)
  VALUES ('$cpf', '$nome', '$senha');";
 
 $result = $conn->query($query);
@@ -16,7 +16,7 @@ if ($result === TRUE) {
     ?>
     <script>
         alert("Funcionario cadastrado com sucesso!");
-        location.href = "main.html";
+        location.href = "../index.html";
     </script>
     <?php
 
@@ -24,7 +24,7 @@ if ($result === TRUE) {
     ?>
     <script>
         alert("Erro de conexão com servidor, voltando a tela principal");
-        location.href = "main.html";
+        location.href = "../index.html";
     </script>
     <?php
     echo "Error: " . $sql . "<br>" . $conn->error;

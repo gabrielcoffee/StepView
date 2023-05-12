@@ -8,7 +8,7 @@ $sexo = $_POST["sexo"];
 $nascimento = $_POST["nascimento"];
 $telefone = $_POST["telefone"];
 
-$query = "INSERT INTO Paciente(cpfPaciente, nomePaciente, nascimentoPaciente, telefonePaciente, emailPaciente, sexoPaciente)
+$query = "INSERT INTO cliente(cpf, nome, nascimento, telefone, email, sexo)
  VALUES ('$cpf', '$nome', '$nascimento', '$telefone', '$email', '$sexo');";
 
 $result = $conn->query($query);
@@ -17,7 +17,7 @@ if ($result === TRUE) {
     
     ?>
     <script>
-        alert("Paciente cadastrado com sucesso!");
+        alert("Cliente cadastrado com sucesso!");
         location.href = "visualizar_clientes.php";
     </script>
     <?php
