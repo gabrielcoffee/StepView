@@ -4,7 +4,7 @@
 $server_name = 'localhost';
 $username = 'admin';
 $password = 'admin';
-$database = 'stepview01';
+$database = 'stepview';
 
 /*
 // Na Puc
