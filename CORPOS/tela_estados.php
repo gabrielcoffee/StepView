@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tela_estado.css">
+    <link rel="stylesheet" href="../ESTILOS/tela_estado.css">
     <title>StepView</title>
 </head>
 
@@ -38,7 +38,44 @@
                 <div class="dropzone">
                     <h3>Agendamento solicitado</h3>
                     <div class="card" draggable="true">
-                        <h3>Card1</h3>
+                                            <?php
+
+                        // CÓDIGO PHP 
+                        include_once "../CORPOS/PHPconfig.php";
+
+                        // Pega cpf do cliente que foi clicado em editar pelo GET
+                        if (isset($_GET['cpf'])) {
+                            $cpfeditar = $_GET['cpf'];
+                        }
+
+
+                        // Código sql do que vai ser puxado do banco de dados
+                        $sql = "SELECT cpf, nome
+                        FROM cliente;";
+
+                        // Faz o query (consulta)
+                        $result = $conn->query($sql);
+
+                        // Enquanto ainda estiver retornando resultados para o 
+                        // (ou seja, se ainda tiver mais clientes na lista para iterar)
+                        while($cliente = $result->fetch_assoc())
+                        {
+                            // Pega informações do 
+                            $cpf        = $cliente["cpf"];
+                            $nome       = $cliente["nome"];
+                           
+
+
+                        
+                        
+                            echo "<td class='td_principal'><a href='registrar_cliente.html'>Cliente: ".$nome."</a></td>\n";
+                          
+                            
+                            
+                            
+                        }
+                        // FIM DO CÓDIGO PHP
+                        ?>
                     </div>
                 </div>
             </div>
@@ -76,7 +113,7 @@
             </div>
         </aside>
     </div>
-    <script src="tela_estado.js">
+    <script src="../SCRIPTS/tela_estado.js">
     </script>
 </body>
 

@@ -2,8 +2,8 @@
 
 // Em casa (Gabriel)
 $server_name = 'localhost';
-$username = 'admin';
-$password = 'admin';
+$username = 'root';
+$password = '';
 $database = 'stepview';
 
 /*
