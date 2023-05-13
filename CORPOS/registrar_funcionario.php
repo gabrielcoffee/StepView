@@ -9,7 +9,7 @@
 </head>
 <body>
    <div class="lateral_esquerdo">
-
+        
         <form method="POST" action="PHPregistrar_funcionario.php" class="inputs">
             <h2>Registro</h2>
             <div class="inputClass">

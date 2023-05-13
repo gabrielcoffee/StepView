@@ -37,46 +37,44 @@
             <div class="board">
                 <div class="dropzone">
                     <h3>Agendamento solicitado</h3>
-                    <div class="card" draggable="true">
-                                            <?php
-
-                        // CÓDIGO PHP 
-                        include_once "../CORPOS/PHPconfig.php";
-
-                        // Pega cpf do cliente que foi clicado em editar pelo GET
-                        if (isset($_GET['cpf'])) {
-                            $cpfeditar = $_GET['cpf'];
-                        }
-
-
-                        // Código sql do que vai ser puxado do banco de dados
-                        $sql = "SELECT cpf, nome
-                        FROM cliente;";
-
-                        // Faz o query (consulta)
-                        $result = $conn->query($sql);
-
-                        // Enquanto ainda estiver retornando resultados para o 
-                        // (ou seja, se ainda tiver mais clientes na lista para iterar)
-                        while($cliente = $result->fetch_assoc())
-                        {
-                            // Pega informações do 
-                            $cpf        = $cliente["cpf"];
-                            $nome       = $cliente["nome"];
-                           
-
+                    <?php
 
                         
+                    include_once "../CORPOS/PHPconfig.php";
+
+
+                    if (isset($_GET['cpf'])) {
+                        $cpfeditar = $_GET['cpf'];
+                    }
+
+
+
+                    $sql = "SELECT cpf, nome FROM cliente;";
+
+                    // Faz o query (consulta)
+                    $result = $conn->query($sql);
+
+
+                    while($cliente = $result->fetch_assoc())
+                    {
+                        // Pega informações do 
+                        $cpf        = $cliente["cpf"];
+                        $nome       = $cliente["nome"];
                         
-                            echo "<td class='td_principal'><a href='registrar_cliente.html'>Cliente: ".$nome."</a></td>\n";
-                          
-                            
-                            
-                            
-                        }
-                        // FIM DO CÓDIGO PHP
-                        ?>
-                    </div>
+
+                        echo "<div class='card' draggable='true'>";
+                         echo "<td class='td_principal'>
+                         <a href='registrar_cliente.php?CPF=".$cpf."'>".$nome."</a>
+                         </td>\n";
+                        echo "</div>";
+
+                    
+                    
+
+                    }
+
+                    ?>
+
                 </div>
             </div>
             <div class="board">
