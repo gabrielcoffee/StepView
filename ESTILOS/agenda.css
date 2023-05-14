@@ -2,6 +2,7 @@ body
 {
     padding: 0;
     margin: 0;
+   
 }
 
 .container
@@ -12,14 +13,16 @@ body
     grid-template-rows: 20vh 80vh;
     grid-template-areas: 
     "h h"
-    "e d";
+    "d d";
+    
 
 }
 
 header
 {
     grid-area: h;
-}
+    
+}  
 
 .titulo
 {
@@ -28,6 +31,15 @@ header
     align-items: center;
     width: 100%;
     height: 100%;
+    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
+}
+
+
+.titulo > h2
+{
+    box-shadow: 0px 2px;
+    font-size: 2vw;
+    
 }
 
 
@@ -37,16 +49,16 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: #E1E6FA;
     
 }
 
 .conteudoEsquerda
 {
-    background-color: rgb(162, 162, 185);
+    
     width: 40vw;
     height: 80%;
-
+    
     
     display: flex;
     align-items: end;
@@ -67,12 +79,83 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
     flex-direction: column;
+    
+    
+}
+.tabelaPegar
+{
+    overflow: auto;
+    height: 70vh;
+    width: 60vw;
+    background-color: #E1E6FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-
-.telaDireita > table > td > input
+.tabelaPegar > fieldset
 {
-    width: 2vw;
+    margin: 5px;
+}
+
+.inputData
+{
+    width: 10vw;
+    border-radius: 10px;
+    height: 5vh;
+}
+
+.inputClass
+{
+    width: 25vw;
+    height: 5vh;
+    border-radius: 10px;
+    border: none;
+}
+
+.inputProcesso
+{
+    width: 10vw;
+    height: 5vh;
+    border-radius: 10px;
+    border: none;
+
+}
+
+.labelProcesso
+{
+    font-size: 1.5vw;
+   
+    border-right: 0.1vw solid black;
+    margin: 1px;
+    padding: 10px;
+      
+}
+
+.inputArea
+{
+    width: 25vw;
+    height: 7vh;
+    border-radius: 10px;
+}
+
+fieldset
+{
+    border: 2.5px solid #92a3b3;
+    border-radius: 10px;
+    font-size: 1vw;
+}
+
+.botaoExcluir
+{
+    color: #92a3b3;
+    background-color: #183152;
+    border: none;
+    border-radius: 5px;
+    width: 6vw;
+    height: 4vh;
 }

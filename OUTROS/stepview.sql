@@ -95,7 +95,7 @@ CREATE TABLE `odontologista` (
 --
 
 CREATE TABLE `processo` (
-  `idProcesso` int(11) NOT NULL,
+  `idProcesso` int(11) NOT NULL AUTO_INCREMENT,
   `tipoProcesso` varchar(50) DEFAULT NULL,
   `descricao` varchar(100) DEFAULT NULL,
   `data` date DEFAULT NULL,

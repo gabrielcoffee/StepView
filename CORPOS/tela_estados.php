@@ -24,7 +24,11 @@
         </header>
         <nav>
             <div class="nav_esquerda">
-                <button class="botao_criar_nav" onclick= "location.href = 'visualizar_clientes.php';" >Lista Clientes</button>
+                <button class="botao_criar_nav" onclick= "location.href = 'visualizar_clientes.php';" >Lista Clientes</button>            
+               
+            </div>
+            <div class="nav_direita">
+
             </div>
         </nav>
         <main>
