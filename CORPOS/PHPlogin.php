@@ -22,7 +22,7 @@ else
     ?>
     <script>
         alert("Funcionario não encontrado");
-        location.href = "main.html";
+        location.href = "../";
     </script>
     <?php
 }

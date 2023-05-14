@@ -31,16 +31,3 @@ if ($result === TRUE) {
 $conn->close();
 
 ?>
-
-
-
-
-/*
-$query = "INSERT INTO processos(descricao)
- VALUES ('$comentario'); SELECT processos.idProcesso, processos.tipoProcesso, processo.descricao, processos.data, cliente.cpf FROM processos INNER JOIN cliente ON cliente.cpf = processos.fk_Cliente_cpf" ;
-*/
-
-/*
-
-?>
-*/

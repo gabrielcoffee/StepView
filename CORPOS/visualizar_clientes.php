@@ -21,7 +21,7 @@
             <form action="../CORPOS/PHPregistrar_cliente.php" method="POST">
                 <div class="inputClass">
                     CPF:
-                    <input type="text" name="cpf" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})" required>
+                    <input type="text" name="cpf" pattern="[0-9]{11}" required>
                 </div>
                 <div class="inputClass">
                     Nome:
@@ -102,7 +102,7 @@
                 <?php
 
                 // CÓDIGO PHP 
-                include_once "../CORPOS/PHPconfig.php";
+                include_once "PHPconfig.php";
 
                 // Pega cpf do cliente que foi clicado em editar pelo GET
                 if (isset($_GET['cpf'])) {
@@ -137,8 +137,7 @@
                     else
                         $sexo = "Outro";
 
-                    // Poe na table de html os dados do 
-                    
+                    // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
                     {
                         echo "<tr>\n";
@@ -179,7 +178,7 @@
                     {
                         echo "<tr>\n";
                     echo "<td class='td_principal'>".$cpf."</td>\n";
-                    echo "<td class='td_principal'><a href='registrar_cliente.html'>".$nome."</a></td>\n";
+                    echo "<td class='td_principal'>".$nome."</a></td>\n";
                     echo "<td class='td_principal'>".$email."</td>\n";
                     echo "<td class='td_principal'>".$telefone."</td>\n";
                     echo "<td class='td_principal'>".$sexo."</td>\n";

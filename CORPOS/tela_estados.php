@@ -18,59 +18,56 @@
             <div class="barra_de_pesquisa">
                 <input type="text" name="barra_de_pesquisa" placeholder="">
                 <a class="loopa" href="">
-                    <img src="loupe.png" alt="busca">
+                    <img src="../IMAGENS/loupe.png" alt="busca">
                 </a>
             </div>
         </header>
         <nav>
             <div class="nav_esquerda">
-               
-                <button class="botao_criar_nav" onclick= "location.href = '../registrar_cliente.html';" >Criar</button>
-               
-               
-            </div>
-            <div class="nav_direita">
-
+                <button class="botao_criar_nav" onclick= "location.href = 'visualizar_clientes.php';" >Lista Clientes</button>
             </div>
         </nav>
         <main>
             <div class="board">
                 <div class="dropzone">
                     <h3>Agendamento solicitado</h3>
+
                     <?php
 
-                        
-                    include_once "../CORPOS/PHPconfig.php";
+                    include_once "PHPconfig.php";
 
+                    $sql = "SELECT * FROM cliente WHERE estado = 1";
 
-                    if (isset($_GET['cpf'])) {
-                        $cpfeditar = $_GET['cpf'];
-                    }
-
-
-
-                    $sql = "SELECT cpf, nome FROM cliente;";
-
-                    // Faz o query (consulta)
                     $result = $conn->query($sql);
-
 
                     while($cliente = $result->fetch_assoc())
                     {
-                        // Pega informações do 
                         $cpf        = $cliente["cpf"];
                         $nome       = $cliente["nome"];
-                        
 
-                        echo "<div class='card' draggable='true'>";
-                         echo "<td class='td_principal'>
-                         <a href='agenda.php?CPF=".$cpf."'>".$nome."</a>
-                         </td>\n";
-                        echo "</div>";
-
-                    
+                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                    }
+                    ?>
                     
 
+                </div>
+            </div>
+            <div class="board">
+                <div class="dropzone">
+                    <h3>Pagamento realizado</h3>
+
+                    <?php
+                    
+                    $sql = "SELECT * FROM cliente WHERE estado = 2";
+
+                    $result = $conn->query($sql);
+
+                    while($cliente = $result->fetch_assoc())
+                    {
+                        $cpf        = $cliente["cpf"];
+                        $nome       = $cliente["nome"];
+
+                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
                     }
 
                     ?>
@@ -79,26 +76,47 @@
             </div>
             <div class="board">
                 <div class="dropzone">
-                    <h3>Pagamento realizado</h3>
-                    <div class="card" draggable="true">
-                        <h3>Card2</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="board">
-                <div class="dropzone">
                     <h3>Agendamento realizado</h3>
-                    <div class="card" draggable="true">
-                        <h3>Card3</h3>
-                    </div>
+
+                    <?php
+                    
+                    $sql = "SELECT * FROM cliente WHERE estado = 3";
+
+                    $result = $conn->query($sql);
+
+
+                    while($cliente = $result->fetch_assoc())
+                    {
+                        $cpf        = $cliente["cpf"];
+                        $nome       = $cliente["nome"];
+
+                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                    }
+
+                    ?>
+
                 </div>
             </div>
             <div class="board">
                 <div class="dropzone">
                     <h3>Procedimento realizado</h3>
-                    <div class="card" draggable="true">
-                        <h3>Card4</h3>
-                    </div>
+
+                    <?php
+                    
+                    $sql = "SELECT * FROM cliente WHERE estado = 4";
+
+                    $result = $conn->query($sql);
+
+                    while($cliente = $result->fetch_assoc())
+                    {
+                        $cpf        = $cliente["cpf"];
+                        $nome       = $cliente["nome"];
+
+                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                    }
+
+                    ?>
+
                 </div>
             </div>
         </main>
