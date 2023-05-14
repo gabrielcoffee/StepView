@@ -43,19 +43,20 @@ header
 
 .conteudoEsquerda
 {
-    background-color: blue;
-    width: 80%;
+    background-color: rgb(162, 162, 185);
+    width: 40vw;
     height: 80%;
 
     
     display: flex;
-    justify-content: center;
+    align-items: end;
+    flex-direction: column;
 }
 
 .conteudoEsquerda > h2
 {
     color: aliceblue;
-    width: 4vw;
+    width: 9vw;
 }
 
 
@@ -67,5 +68,11 @@ header
     justify-content: center;
     align-items: center;
     background-color: aqua;
+    flex-direction: column;
 }
 
+
+.telaDireita > table > td > input
+{
+    width: 2vw;
+}

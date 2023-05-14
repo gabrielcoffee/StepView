@@ -64,7 +64,7 @@
 
                         echo "<div class='card' draggable='true'>";
                          echo "<td class='td_principal'>
-                         <a href='registrar_cliente.php?CPF=".$cpf."'>".$nome."</a>
+                         <a href='agenda.php?CPF=".$cpf."'>".$nome."</a>
                          </td>\n";
                         echo "</div>";
 
