@@ -52,16 +52,20 @@
                     $descricao   = $processo["descricao"];
                     $data = $processo["data"];
 
-
+                    echo "<fieldset>";
                     echo "<table>";
                     echo "<form action='PHPcomentar_deletar.php' method='POST'>";
                     echo "<input type='hidden' value='$cpf' name='cpf'>";
-                    echo "<td><input class='inputProcesso' type='text' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
-                    echo "<td><textarea class='inputArea' type='text' value='$descricao' name='descricao' placeholder='$descricao'></textarea></td>";
-                    echo "<td><input class='inputData' type='date' value='$data' name='data'></td>";
-                    echo "<td><button type='submit'>Excluir</button></td>";
+                    echo "<td><label class='labelProcesso'>$tipoProcesso</label></td>";
+                    echo "<td><input class='inputProcesso' type='hidden' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
+                    echo "<td><label class='labelProcesso'>$descricao</label></td>";
+                    echo "<td><input class='inputArea' type='hidden' value='$descricao' name='descricao' placeholder='$descricao'></td>";
+                    echo "<td><label class='labelProcesso'>$data</label></td>";
+                    echo "<td><input class='inputData' type='hidden' value='$data' name='data'></td>";
+                    echo "<td><button class='botaoExcluir' type='submit'>Excluir</button></td>";
                     echo "</form>";
                     echo "</table>";
+                    echo "</fieldset>";
                     
                 }
                 ?>

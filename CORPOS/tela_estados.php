@@ -25,7 +25,7 @@
         <nav>
             <div class="nav_esquerda">
                
-                <button class="botao_criar_nav" onclick= "location.href = '../registrar_cliente.html';" >Criar</button>
+                <button class="botao_criar_nav" onclick= "location.href = 'visualizar_clientes.php';" >Lista</button>
                
                
             </div>
