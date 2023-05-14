@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Maio-2023 às 15:24
+-- Tempo de geração: 15-Maio-2023 às 01:15
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -54,8 +54,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cpf`, `nome`, `nascimento`, `telefone`, `email`, `sexo`, `comentario`, `estado`) VALUES
-('093.717.469', 'NICOLAS RODRIGUES BLASKOVSKI', '2023-05-13', '41998144154', 'nicolasblaskovski@gmail.com', 'M', '', 1),
-('12412412412', 'patgogamer', '2023-05-10', '4166621452', 'nil@awsdfsadfasdfas.com', 'O', 'Salve ', 1);
+('06188144183', 'gabriel', '2003-09-18', '66996854445', 'gab@gmail.com', 'M', NULL, 3);
 
 -- --------------------------------------------------------
 
@@ -74,6 +73,7 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`cpf`, `nome`, `senha`) VALUES
+('06188144183', 'gabriel', '123'),
 ('09371746963', 'NICOLAS RODRIGUES BLASKOVSKI', 'pato');
 
 -- --------------------------------------------------------
@@ -95,19 +95,12 @@ CREATE TABLE `odontologista` (
 --
 
 CREATE TABLE `processo` (
-  `idProcesso` int(11) NOT NULL AUTO_INCREMENT,
+  `idProcesso` int(11) NOT NULL,
   `tipoProcesso` varchar(50) DEFAULT NULL,
   `descricao` varchar(100) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `fk_Cliente_cpf` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `processo`
---
-
-INSERT INTO `processo` (`idProcesso`, `tipoProcesso`, `descricao`, `data`, `fk_Cliente_cpf`) VALUES
-(0, 'sdasdsadsa', 'asdasdasdsa', '2023-05-03', '093.717.469');
 
 -- --------------------------------------------------------
 

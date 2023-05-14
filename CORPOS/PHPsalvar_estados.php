@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     else if ($estado == "Agendamento realizado") $estado = 3;
     else if ($estado == "Procedimento realizado") $estado = 4;
 
-    // Update the estado in the database
+    // Atualiza estado no banco de dados
     $stmt = $conn->prepare('UPDATE cliente SET estado = ? WHERE cpf = ?');
     $stmt->bind_param('is', $estado, $cpf);
     $stmt->execute();

@@ -86,6 +86,10 @@
             <button onclick="abrirModal()" class="botaoCriar">
             Cadastrar Cliente
             </button>
+
+            <button onclick="location.href='tela_estados.php';" class="botaoCriar">
+            Tela de Estados
+            </button>
             
             <table>
                 <!-- CABEÇALHO DA TABELA CLIENTES -->
@@ -178,7 +182,7 @@
                     {
                         echo "<tr>\n";
                     echo "<td class='td_principal'>".$cpf."</td>\n";
-                    echo "<td class='td_principal'>".$nome."</a></td>\n";
+                    echo "<td class='td_principal'><a href='agenda.php?CPF=".$cpf."'>".$nome."</a></td>\n";
                     echo "<td class='td_principal'>".$email."</td>\n";
                     echo "<td class='td_principal'>".$telefone."</td>\n";
                     echo "<td class='td_principal'>".$sexo."</td>\n";

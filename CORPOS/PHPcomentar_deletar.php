@@ -2,6 +2,7 @@
 include_once "PHPconfig.php";
 
 $cpf = $_POST["cpf"];
+$idproc = $_POST["idproc"];
 
 $sql = "DELETE FROM processo WHERE fk_Cliente_cpf = '$cpf';";
 $result = $conn->query($sql);
@@ -11,7 +12,7 @@ if ($result === TRUE)
     ?>
     <script>
         alert("Comentario deletado com sucesso");
-        location.href = "tela_estados.php";
+        location.href = "visualizar_cliente.php";
     </script>
     <?php
 }
