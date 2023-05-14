@@ -18,7 +18,7 @@ if ($result === TRUE) {
     ?>
     <script>
         alert("Comentario adicionado com sucesso!");
-        location.href = "../index.html";
+        location.href = "../CORPOS/tela_estados.php";
     </script>
     <?php
 

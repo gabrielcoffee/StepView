@@ -12,13 +12,14 @@ body
     grid-template-rows: 20vh 80vh;
     grid-template-areas: 
     "h h"
-    "e d";
+    "d d";
 
 }
 
 header
 {
     grid-area: h;
+    background-color: #E1E6FA;
 }
 
 .titulo
@@ -37,7 +38,7 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: antiquewhite;
+    background-color: #E1E6FA;
     
 }
 
@@ -67,12 +68,44 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: aqua;
+    background-color: #E1E6FA;
     flex-direction: column;
+    
+}
+.tabelaPegar
+{
+    overflow: auto;
+    height: 40vh;
+    width: 60vw;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-
-.telaDireita > table > td > input
+.inputData
 {
-    width: 2vw;
+    width: 10vw;
+    height: 5vh;
+}
+
+.inputClass
+{
+    width: 25vw;
+    height: 5vh;
+    border: none;
+}
+
+.inputProcesso
+{
+    width: 10vw;
+    height: 5vh;
+    border: none;
+}
+
+.inputArea
+{
+    width: 25vw;
+    height: 7vh;
 }

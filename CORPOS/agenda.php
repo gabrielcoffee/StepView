@@ -14,7 +14,7 @@
                 <h2>Cliente</h2>
             </div>
         </header>
-        <div class="telaEsquerda">
+        <!--<div class="telaEsquerda">
             <div class="conteudoEsquerda">
                 <h2>Estado atual</h2>
                 <div class="estados">
@@ -34,9 +34,10 @@
                 </div>
             </div>
             
-        </div>
+        </div> -->
         <div class="telaDireita">
-            <div class="tabelaPegar">
+            <fieldset class="tabelaPegar">
+                <legend>Comentarios</legend>
                 <?php 
                 include_once "../CORPOS/PHPconfig.php";
 
@@ -51,31 +52,34 @@
                     $descricao   = $processo["descricao"];
                     $data = $processo["data"];
 
-                    echo "<form action='PHPcomentar.php' method='POST'>";
+
                     echo "<table>";
-                    echo "<td><input type='text' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
-                    echo "<td><input type='text' value='$descricao' name='descricao' placeholder='Descrição'></td>";
-                    echo "<td><input type='date' value='$data' name='data'></td>";
-                    echo "<td><button>Salvar</button></td>";
-                    echo "<td><button>Excluir</button></td>";
-                    echo "</table>";
+                    echo "<form action='PHPcomentar_deletar.php' method='POST'>";
+                    echo "<input type='hidden' value='$cpf' name='cpf'>";
+                    echo "<td><input class='inputProcesso' type='text' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
+                    echo "<td><textarea class='inputArea' type='text' value='$descricao' name='descricao' placeholder='$descricao'></textarea></td>";
+                    echo "<td><input class='inputData' type='date' value='$data' name='data'></td>";
+                    echo "<td><button type='submit'>Excluir</button></td>";
                     echo "</form>";
+                    echo "</table>";
+                    
                 }
                 ?>
              
-            </div>
+            </fieldset>
             <div class='tabelaCriar'>
                 
                 <?php 
                 include_once "../CORPOS/PHPconfig.php";
 
                 $cpf = $_GET["CPF"];
+                echo "<h3>Adicionar comentario</h3>";
                 echo "<form action='PHPcomentar.php' method='POST'>";
                 echo "<table>";
                 echo "<input type='hidden' value='$cpf' name='cpf'>";
-                echo "<td><input type='text' value='' name='tipoProcesso' placeholder='Tipo do processo'></td>";
-                echo "<td><input type='text' value='' name='descricao' placeholder='Descrição'></td>";
-                echo "<td><input type='date' value='' name='data'></td>";
+                echo "<td><input class='inputProcesso' type='text' value='' name='tipoProcesso' placeholder='Tipo do processo'></td>";
+                echo "<td><textarea class='inputArea' type='text' value='' name='descricao' placeholder='Descrição'></textarea></td>";
+                echo "<td><input class='inputData' type='date' value='' name='data'></td>";
                 echo "<td><button>Salvar</button></td>";
                 echo "</table>";
                 echo "</form>";
