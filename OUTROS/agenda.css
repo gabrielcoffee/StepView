@@ -6,6 +6,66 @@ body
 
 .container
 {
+
     display: grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 20vh 80vh;
+    grid-template-areas: 
+    "h h"
+    "e d";
+
+}
+
+header
+{
+    grid-area: h;
+}
+
+.titulo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.telaEsquerda
+{
+    grid-area: e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
     
 }
+
+.conteudoEsquerda
+{
+    background-color: blue;
+    width: 80%;
+    height: 80%;
+
+    
+    display: flex;
+    justify-content: center;
+}
+
+.conteudoEsquerda > h2
+{
+    color: aliceblue;
+    width: 4vw;
+}
+
+
+
+.telaDireita
+{
+    grid-area: d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
