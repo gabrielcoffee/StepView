@@ -16,7 +16,7 @@ $password = '';
 $database = 'stepview';
 */
 
-// Em casa (Nicolas
+// Em casa (Nicolas)
 $server_name = 'localhost';
 $username = 'root';
 $password = '';
