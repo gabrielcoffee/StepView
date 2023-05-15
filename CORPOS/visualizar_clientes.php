@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../ESTILOS/visualizar_clientes.css">
-    <title>StepView</title>
+    <title>StepView Clientes</title>
 </head>
 
 <body>
@@ -34,7 +34,7 @@
                 
                 <div class="inputClass">
                     Data de Nascimento:
-                    <input type="date" name="nascimento" required>
+                    <input type="date" name="nascimento" required min="1900-01-01" max="2023-05-15">
                 </div>
                 <div class="inputClass">
                     Telefone:
@@ -82,14 +82,15 @@
 
         <h1>Clientes</h1>
         <div class="container">
+            <div class="botoes">
+                <button onclick="abrirModal()" class="botaoCriar">
+                Cadastrar Cliente
+                </button>
 
-            <button onclick="abrirModal()" class="botaoCriar">
-            Cadastrar Cliente
-            </button>
-
-            <button onclick="location.href='tela_estados.php';" class="botaoCriar">
-            Tela de Estados
-            </button>
+                <button onclick="location.href='tela_estados.php';" class="botaoCriar">
+                Tela de Estados
+                </button>
+            </div>
             
             <table>
                 <!-- CABEÇALHO DA TABELA CLIENTES -->
@@ -140,7 +141,7 @@
                         $sexo = "Feminino";
                     else
                         $sexo = "Outro";
-
+                    
                     // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
                     {
@@ -172,7 +173,7 @@
 
                         echo "</td>\n";
 
-                        echo "<td class='td_principal'><input type='date' name='nascimento' value=".$nascimento."></td>\n";
+                        echo "<td class='td_principal'><input type='date' name='nascimento'min='1900-01-01' max='2023-05-15'  value=".$nascimento."></td>\n";
 
                         echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
                         echo "</form>";

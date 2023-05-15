@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../ESTILOS/registro_funcionario.css">
-    <title>Registrar Funcionario</title>
+    <title>StepView Registro</title>
 </head>
 <body>
    <div class="lateral_esquerdo">
@@ -13,7 +13,7 @@
         <form method="POST" action="PHPregistrar_funcionario.php" class="inputs">
             <h2>Registro</h2>
             <div class="inputClass">
-                <input type="text" name="cpf" placeholder="CPF" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})">
+                <input type="text" name="cpf" placeholder="CPF" pattern="[0-9]{11}">
             </div>
             <div class="inputClass">
                 <input type="text" placeholder="Nome" name="nome">

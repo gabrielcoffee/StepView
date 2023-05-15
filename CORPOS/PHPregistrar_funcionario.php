@@ -1,6 +1,5 @@
 <?php
 include_once "PHPconfig.php";
-session_start();
 
 $cpf = $_POST["cpf"];
 $nome = $_POST["nome"];

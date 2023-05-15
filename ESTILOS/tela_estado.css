@@ -99,6 +99,7 @@ nav
     background-color: #ffffff;
     grid-area: nav;
     display: flex;
+    border-radius: 15px;
 
  
 }

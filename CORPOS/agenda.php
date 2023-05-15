@@ -5,57 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../ESTILOS/agenda.css">
-    <title>Document</title>
+    <title>StepView Agenda</title>
 </head>
 <body>
     <div class="container">
         <header>
             <div class="titulo">
-                <h2>Cliente</h2>
+                <h2>Agenda de Processos</h2>
             </div>
         </header>
-        <!--<div class="telaEsquerda">
-            <div class="conteudoEsquerda">
-                <h2>Estado atual</h2>
-                <div class="estados">
-                    <form>
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <div class="botaoEstado">
-                            <button>Alterar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-        </div> -->
         <div class="telaDireita">
             <fieldset class="tabelaPegar">
                 <legend>Comentarios</legend>
                 <?php 
-                include_once "../CORPOS/PHPconfig.php";
+                include_once "PHPconfig.php";
 
                 $cpf = $_GET["CPF"];
 
-
-
                 $sql = "SELECT * FROM processo WHERE fk_Cliente_cpf = '$cpf';";
                 $result = $conn -> query($sql);
+                
                 while($processo = $result->fetch_assoc()){
                     $tipoProcesso = $processo["tipoProcesso"];
                     $descricao   = $processo["descricao"];
-                    $data = $processo["data"];
+                    $data = $processo["data_marcada"];
+                    $id = $processo["idProcesso"];
 
                     echo "<fieldset>";
                     echo "<table>";
                     echo "<form action='PHPcomentar_deletar.php' method='POST'>";
                     echo "<input type='hidden' value='$cpf' name='cpf'>";
+                    echo "<input type='hidden' value='$id'  name='idproc'>";
                     echo "<td><label class='labelProcesso'>$tipoProcesso</label></td>";
                     echo "<td><input class='inputProcesso' type='hidden' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
                     echo "<td><label class='labelProcesso'>$descricao</label></td>";
@@ -74,7 +54,7 @@
             <div class='tabelaCriar'>
                 
                 <?php 
-                include_once "../CORPOS/PHPconfig.php";
+                include_once "PHPconfig.php";
 
                 $cpf = $_GET["CPF"];
                 echo "<h3>Adicionar comentario</h3>";

@@ -14,7 +14,7 @@ body
 
     width: 100vw;
     height: 100vh;
-    background-color: #ABC8E2;
+    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
 
     font-family: 'Roboto Slab', serif;
 }
@@ -42,11 +42,19 @@ body > h1
     border-radius: 15px;
 }
 
-.container > button
+.botoes{
+    width: 18vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes > button
 {
-    width: 5vw;
+    width: 8vw;
     height: 5vh;
-    align-self: flex-start;
+    
     margin: 5px;
     background-color: #FFFAEB;
     font-size: 1vw;
@@ -124,6 +132,8 @@ td
     background-color: #ffffff96;
     width: 100vw;
     height: 100vh;
+
+    overflow: auto;
 }
 
 .tela_cadastro > h1 
@@ -139,10 +149,15 @@ form
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: auto;
 
     width: 20vw;
     height: 52vh;
     border-radius: 5px 5px 0px 0px;
+}
+
+form::-webkit-scrollbar{
+    width: 1px
 }
 
 
@@ -162,7 +177,7 @@ form
 .inputClass > input {
     font-size: 1vw;
     font: "open sans extra bold";
-    margin: 20px;
+    margin: 15px;
     background: #c5cce9;
     border: none;
     border-bottom: 2px solid rgb(0, 0, 0);;
