@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 15-Maio-2023 às 01:15
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 15-Maio-2023 às 14:41
+-- Versão do servidor: 10.4.24-MariaDB
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `stepview`
+-- Banco de dados: `stepview1`
 --
 
 -- --------------------------------------------------------
@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `administracao`
 --
 
-CREATE TABLE `administracao` (
+/*CREATE TABLE `administracao` (
   `fk_Funcionario_cpf` varchar(11) NOT NULL,
   `area` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;*/
 
 -- --------------------------------------------------------
 
@@ -98,9 +98,18 @@ CREATE TABLE `processo` (
   `idProcesso` int(11) NOT NULL,
   `tipoProcesso` varchar(50) DEFAULT NULL,
   `descricao` varchar(100) DEFAULT NULL,
-  `data` date DEFAULT NULL,
+  `data_marcada` date DEFAULT NULL,
   `fk_Cliente_cpf` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `processo`
+--
+
+INSERT INTO `processo` (`idProcesso`, `tipoProcesso`, `descricao`, `data_marcada`, `fk_Cliente_cpf`) VALUES
+(4, 'novo', '1', '1222-02-12', '06188144183'),
+(6, 'dente', '3', '2020-12-12', '06188144183'),
+(7, 'novo', '4', '2023-09-12', '06188144183');
 
 -- --------------------------------------------------------
 
@@ -150,7 +159,7 @@ ALTER TABLE `funcionario`
 -- Índices para tabela `odontologista`
 --
 ALTER TABLE `odontologista`
-  ADD PRIMARY KEY (`fk_Funcionario_cpf`);
+  ADD PRIMARY KEY (`fk_Funcionario_cpf`);*/
 
 --
 -- Índices para tabela `processo`
@@ -171,6 +180,16 @@ ALTER TABLE `realiza`
 --
 ALTER TABLE `secretaria`
   ADD PRIMARY KEY (`fk_Funcionario_cpf`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `processo`
+--
+ALTER TABLE `processo`
+  MODIFY `idProcesso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restrições para despejos de tabelas
