@@ -82,14 +82,15 @@
 
         <h1>Clientes</h1>
         <div class="container">
+            <div class="botoes">
+                <button onclick="abrirModal()" class="botaoCriar">
+                Cadastrar Cliente
+                </button>
 
-            <button onclick="abrirModal()" class="botaoCriar">
-            Cadastrar Cliente
-            </button>
-
-            <button onclick="location.href='tela_estados.php';" class="botaoCriar">
-            Tela de Estados
-            </button>
+                <button onclick="location.href='tela_estados.php';" class="botaoCriar">
+                Tela de Estados
+                </button>
+            </div>
             
             <table>
                 <!-- CABEÇALHO DA TABELA CLIENTES -->
