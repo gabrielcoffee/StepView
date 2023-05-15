@@ -17,7 +17,7 @@ if ($result === TRUE) {
     ?>
     <script>
         alert("Comentario adicionado com sucesso!");
-        location.href = "../CORPOS/tela_estados.php";
+        location.href = "visualizar_clientes.php";
     </script>
     <?php
 
@@ -25,7 +25,7 @@ if ($result === TRUE) {
     ?>
     <script>
         alert("Erro de conexão com servidor, voltando...");
-
+        location.href = "visualizar_clientes.php";
     </script>
     <?php
     echo "Error: " . $sql . "<br>" . $conn->error;

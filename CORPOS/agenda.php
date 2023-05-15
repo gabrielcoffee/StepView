@@ -11,30 +11,9 @@
     <div class="container">
         <header>
             <div class="titulo">
-                <h2>Agenda</h2>
+                <h2>Agenda de Processos</h2>
             </div>
         </header>
-        <!--<div class="telaEsquerda">
-            <div class="conteudoEsquerda">
-                <h2>Estado atual</h2>
-                <div class="estados">
-                    <form>
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <label>Ola</label>
-                        <input type="checkbox">
-                        <div class="botaoEstado">
-                            <button>Alterar</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
-        </div> -->
         <div class="telaDireita">
             <fieldset class="tabelaPegar">
                 <legend>Comentarios</legend>
@@ -50,11 +29,13 @@
                     $tipoProcesso = $processo["tipoProcesso"];
                     $descricao   = $processo["descricao"];
                     $data = $processo["data_marcada"];
+                    $id = $processo["idProcesso"];
 
                     echo "<fieldset>";
                     echo "<table>";
                     echo "<form action='PHPcomentar_deletar.php' method='POST'>";
                     echo "<input type='hidden' value='$cpf' name='cpf'>";
+                    echo "<input type='hidden' value='$id'  name='idproc'>";
                     echo "<td><label class='labelProcesso'>$tipoProcesso</label></td>";
                     echo "<td><input class='inputProcesso' type='hidden' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
                     echo "<td><label class='labelProcesso'>$descricao</label></td>";
