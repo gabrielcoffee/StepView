@@ -24,7 +24,7 @@ function dragstart()
 {
     //console.log('> CARD: Star dragging')
     dropzones.forEach(dropzone => dropzone.classList.add('zona_ativada'));
-
+    
     this.classList.add('fazendo_drag');
 }
 function drag() 
