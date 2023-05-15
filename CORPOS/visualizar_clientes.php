@@ -140,7 +140,7 @@
                         $sexo = "Feminino";
                     else
                         $sexo = "Outro";
-
+                    
                     // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
                     {

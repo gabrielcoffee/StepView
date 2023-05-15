@@ -43,10 +43,9 @@
 
                 $cpf = $_GET["CPF"];
 
-
-
                 $sql = "SELECT * FROM processo WHERE fk_Cliente_cpf = '$cpf';";
                 $result = $conn -> query($sql);
+                
                 while($processo = $result->fetch_assoc()){
                     $tipoProcesso = $processo["tipoProcesso"];
                     $descricao   = $processo["descricao"];
