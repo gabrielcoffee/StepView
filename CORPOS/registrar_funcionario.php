@@ -13,7 +13,7 @@
         <form method="POST" action="PHPregistrar_funcionario.php" class="inputs">
             <h2>Registro</h2>
             <div class="inputClass">
-                <input type="text" name="cpf" placeholder="CPF" pattern="([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})">
+                <input type="text" name="cpf" placeholder="CPF" pattern="[0-9]{11}">
             </div>
             <div class="inputClass">
                 <input type="text" placeholder="Nome" name="nome">
