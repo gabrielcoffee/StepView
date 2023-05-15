@@ -1,15 +1,4 @@
-/*
-//Criando card do cliente.
-var cardCliente = document.createElement("div");
 
-cardCliente.classList = "div_criada"; // Colocando uma classe nessa div
-
-//Criando variavel da onde nós queremos colocar esse elemento.
-var container = document.querySelector(".estado1");
-
-//Adicionando o elemento filho no elemento pai por appendChild.
-container.appendChild(cardCliente);
-*/
 
 const cards = document.querySelectorAll('.card');
 const dropzones = document.querySelectorAll('.dropzone');

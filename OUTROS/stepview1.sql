@@ -27,10 +27,10 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `administracao`
 --
 
-CREATE TABLE `administracao` (
+/*CREATE TABLE `administracao` (
   `fk_Funcionario_cpf` varchar(11) NOT NULL,
   `area` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;*/
 
 -- --------------------------------------------------------
 
@@ -159,7 +159,7 @@ ALTER TABLE `funcionario`
 -- Índices para tabela `odontologista`
 --
 ALTER TABLE `odontologista`
-  ADD PRIMARY KEY (`fk_Funcionario_cpf`);
+  ADD PRIMARY KEY (`fk_Funcionario_cpf`);*/
 
 --
 -- Índices para tabela `processo`
