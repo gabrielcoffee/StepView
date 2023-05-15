@@ -11,7 +11,7 @@
     <div class="container">
         <header>
             <div class="titulo">
-                <h2>Cliente</h2>
+                <h2>Agenda</h2>
             </div>
         </header>
         <!--<div class="telaEsquerda">
@@ -39,7 +39,7 @@
             <fieldset class="tabelaPegar">
                 <legend>Comentarios</legend>
                 <?php 
-                include_once "../CORPOS/PHPconfig.php";
+                include_once "PHPconfig.php";
 
                 $cpf = $_GET["CPF"];
 
@@ -49,7 +49,7 @@
                 while($processo = $result->fetch_assoc()){
                     $tipoProcesso = $processo["tipoProcesso"];
                     $descricao   = $processo["descricao"];
-                    $data = $processo["data"];
+                    $data = $processo["data_marcada"];
 
                     echo "<fieldset>";
                     echo "<table>";
@@ -73,7 +73,7 @@
             <div class='tabelaCriar'>
                 
                 <?php 
-                include_once "../CORPOS/PHPconfig.php";
+                include_once "PHPconfig.php";
 
                 $cpf = $_GET["CPF"];
                 echo "<h3>Adicionar comentario</h3>";
