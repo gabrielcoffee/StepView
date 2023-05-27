@@ -3,7 +3,7 @@
 $server_name = 'localhost:3307';
 $username = 'root';
 $password = '';
-$database = 'stepview1';
+$database = 'stepview';
 
 $conn = new mysqli($server_name, $username, $password, $database);
 
