@@ -7,7 +7,7 @@ $data = $_POST["data"];
 $tipoProcesso = $_POST["tipoProcesso"];
 
 
-$query = "INSERT INTO processo(tipoProcesso, descricao, data_marcada, fk_Cliente_cpf)
+$query = "INSERT INTO processo(tipoProcesso, descricao, data, fk_Cliente_cpf)
 VALUES ('$tipoProcesso', '$descricao', '$data', '$cpf');";
 
 $result = $conn->query($query);
