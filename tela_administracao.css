@@ -1,0 +1,77 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to left,#E1E6FA,#ABC8E2 );
+}
+
+.container
+{
+    display: grid;
+    grid-template-columns: 2vw 68vw 29vw;
+    grid-template-rows: 15vh 5vh 75vh 5vh;
+    grid-template-areas: 
+    "e h h"
+    "e n d"
+    "e m d"
+    "e f f";
+}
+
+header
+{
+    grid-area: h;
+    display: flex;
+    justify-content: center;
+}
+
+.assideDireito
+{
+    grid-area: d;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+
+.tituloTh
+{
+    width: 8vw;
+    height: 4vh;
+}
+
+.assideEsquerdo
+{
+    grid-area: e;
+    display: flex;
+    align-items: center;
+}
+
+.assideEsquerdo > h1
+{
+    transform: rotate(90deg);
+}
+
+nav
+{
+    grid-area: n;
+    display: flex;
+    
+    justify-content: end;
+}
+
+nav > button 
+{
+    margin: 5px;
+    border: none;
+    border-radius: 15px;
+    width: 8vw;
+    height: 4vh;
+}
+
+main
+{
+    grid-area: m;
+}
+
+footer
+{
+    grid-area: f;
+}
