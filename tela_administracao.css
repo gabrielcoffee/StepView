@@ -5,6 +5,150 @@ body
     background-image: linear-gradient(to left,#E1E6FA,#ABC8E2 );
 }
 
+.telaModal
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #ffffffab;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaModal.ola
+{
+    display: flex;
+}
+
+
+
+
+.botaoSair > button
+{
+    background-color: red;
+    position: absolute;
+    bottom: 73vh;
+    left: 22.5vw;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 15px;
+}
+
+.containerForm
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.formOdonto
+{
+    width: 25vw;
+    height: 50vh;
+    background-color: #2DA3E2;
+    margin: 0px 30px 0px 30px ;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.formOdonto > form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formOdonto > h1
+{
+    font-size: 1.6vw;
+}
+
+.formOdonto > form > div
+{
+    margin: 1vw;
+    
+}
+
+.formOdonto > form > div > input
+{
+    border: 0;
+    width: 12vw;
+    height: 3vh;
+    border-radius: 15px;
+    
+}
+
+.botoes > button
+{
+    background-color: aqua;
+    border: 0;
+    border-radius: 15px;
+    width: 10vw;
+    height: 3vh;
+}
+
+/*----------------------------------SECRETARIA----------------*/
+
+.formSecre
+{
+    width: 25vw;
+    height: 50vh;
+    background-color: #2DA3E2;
+    margin: 0px 30px 0px 30px ;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSecre > form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSecre > h3
+{
+    font-size: 1.6vw;
+}
+
+.formSecre > form > div
+{
+    margin: 1vw;
+    
+}
+
+.formSecre > form > div > input
+{
+    border: 0;
+    width: 12vw;
+    height: 3vh;
+    border-radius: 15px;
+    
+}
+
+.botoes > button
+{
+    background-color: aqua;
+    border: 0;
+    border-radius: 15px;
+    width: 10vw;
+    height: 3vh;
+}
+
+
 .container
 {
     display: grid;
@@ -62,9 +206,22 @@ nav > button
     margin: 5px;
     border: none;
     border-radius: 15px;
+    border: 2px solid #2DA3E2;
     width: 8vw;
     height: 4vh;
+    
+    transition: 0.5s;
+
 }
+
+nav > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #2DA3E2;
+}
+
+
+
 
 main
 {
