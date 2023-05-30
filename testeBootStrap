@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+/* corpo base da página */
+body{
+    margin: 0;
+    background: #E1E6FA;
+    border: 0;
+    box-sizing: border-box;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    /*posicionando a tela no display flex ex: plano cartesiano x e y */
+    display:flex;  
+    
+    /*Colocando a direção do flex em row/linha, isso mantém os eixos padrões, x e y*/
+    flex-direction: row;
+
+    /*Justify é um comando do css que justifica aquele elemento na tela, nessa linha em especifico eu estou justificando ele no centro. Sendo o justify content, justificando o conteudo do elemento pai, que no caso aqui é o BODY.
+
+    Ele funciona no eixo X do display flex*/
+    justify-content: center;
+
+
+    /*O align de uma forma literal é alinhar algo, o align-items está alinhando os ITENS desse body no eixo Y no centro*/
+    align-items: center;
+
+    /*Aqui estou falando que a fonte familia de todos os elementos filhos do body serão ROBOTO*/
+    font-family: 'Roboto Slab', serif;
+
+}
+
+
+/* */
+.container {
+    /*Estou alterando a cor do background*/
+    background: #c5cce9;
+
+    /*Aqui estou falando que o tamanho desse elemento será 70vw, 70 de viewport e de vh*/
+    width: 70vw;
+    height: 70vh;
+
+    /*border-radius é um comando que eu posso arredondar os elementos, aqui eu estou arrendodando as pontas/radius pra 20px*/
+    border-radius: 20px;
+
+    /*Estou falando que esse elemento terá seu display/layout em flex*/
+    display: flex;
+    flex-direction: row;
+
+    /*O align de uma forma literal é alinhar algo, o align-items está alinhando os ITENS desse body no eixo Y no centro*/
+    align-items: center;
+}
+
+.tela_esquerda {
+    
+    width: 50%;
+    height: 60%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.imagem > img {
+    width: 100%;
+}
+
+
+
+.tela_direita {
+    
+    width: 50%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cabecalho{
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.cabecalho > h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho > a {
+    text-decoration:none;   
+}
+
+
+
+.login > input {
+    font-size: 20px;
+    font: "open sans extra bold";
+    margin: 20px;
+    background: #c5cce9;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);;
+}
+
+.login > button {
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 20px;
+    border: 0;
+    margin: 30px;
+    padding: 10px;
+
+}
