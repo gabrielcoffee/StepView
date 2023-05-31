@@ -67,11 +67,6 @@
                         <div class="botoes">
                             <button>Registrar</button>
                         </div>
-
-
-
-                        
-
                     </form>
                 </div>
             </div>
@@ -88,13 +83,19 @@
         </header>
         <nav>
             <button>Visualizar Estados</button>
-            <button>Visualizar Clientes</button>
+            <button onclick="alo()">Visualizar Clientes</button>
             <button onclick="abrirModal()" class="botaoCriar">
                 Registrar funcionario
-                </button>
+            </button>
         </nav>
         
         <main>
+            <div class="containerMainEsquerda">
+                <h3>Ola</h3>
+            </div>
+            <div class="containerMainDireita">
+                <button onclick="animarDiv()">Ola</button>    
+            </div>
         
         </main>
         <aside class="assideEsquerdo">
@@ -103,9 +104,9 @@
         <aside class="assideDireito">
             <table>
                 <tr class="nomeTabela">
-                    <th>CPF</th>
-                    <th>Nome</th>
-                    <th>Função<th>
+                    <th class="tabelaTitulos">CPF</th>
+                    <th class="tabelaTitulos" >Nome</th>
+                    <th class="tabelaTitulos">Função<th>
                 </tr>
                 <?php
 
@@ -140,7 +141,7 @@
                         echo "<form action='PHPeditar_cliente.php' method='POST'>";
                         echo "<td class='td_principal'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."></td>\n";
                         echo "<td class='td_principal'><input type='text' name='nome' value=".$nome."></td>\n";
-
+                        
                         echo "</td>\n";
 
                         
@@ -154,6 +155,7 @@
                     echo "<tr>\n";
                     echo "<td class='td_principal'>".$cpf."</td>\n";
                     echo "<td class='td_principal'><a>".$nome."</a></td>\n";
+                    echo "<td class='td_principal'><a>".$funcao."</a></td>\n";
                     echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
                     echo "</tr>";
                     }
@@ -166,9 +168,10 @@
             </table>
         </aside>
         <footer>
-            <h1>footer</h1>
         </footer>
     </div>
-    <script src="../SCRIPTS/tela_administracao.js"></script>
+    <script src="../SCRIPTS/tela_administracao.js">
+    
+    </script>
 </body>
 </html>
