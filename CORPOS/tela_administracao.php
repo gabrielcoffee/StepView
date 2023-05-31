@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="tela_administracao.css">
+    <link rel="stylesheet" href="../ESTILOS/tela_administracao.css">
     <title>Document</title>
 </head>
 <body>
@@ -19,22 +19,25 @@
             <div class="containerForm">
                 <div class="formOdonto">
                     <h1>Adicionar Odontologo</h1>
-                    <form action="" method="">
+                    <form action="PHPregistrar_odontologo.php" method="POST">
                         <div>
                             <input name="nome" type="text" placeholder="Nome">
+                        </div>  
+                        <div>
+                            <input name="cpf" type="text" placeholder="Cpf">
                         </div>
                         <div>
                             <input name="crm" type="text" placeholder="Crm">
                         </div>
                      
                         <div>
-                            <input name="senha" type="password" placeholder="Senha">
+                            <input name="" type="password" placeholder="Senha">
                         </div>
                         <div>
                             <input name="senha" type="password" placeholder="Senha">
                         </div>
                         <div class="botoes">
-                            <button>Registrar</button>
+                            <button type="submit">Registrar</button>
                         </div>
 
 
@@ -46,16 +49,15 @@
                 <div class="formSecre">
 
                     <div class="titulo">
-                        <h1>Registrar Funcionario</h1>
+                        <h1>Registrar Secretaria</h1>
                     </div>
-                    <form action="" method="">
+                    <form action="PHPregistrar_secretaria.php" method="POST">
                         <div>
                             <input name="nome" type="text" placeholder="Nome">
                         </div>
                         <div>
-                            <input name="crm" type="text" placeholder="Crm">
+                            <input name="cpf" type="text" placeholder="Cpf">
                         </div>
-                     
                         <div>
                             <input name="senha" type="password" placeholder="Senha">
                         </div>
@@ -108,6 +110,6 @@
             <h1>footer</h1>
         </footer>
     </div>
-    <script src="tela_administracao.js"></script>
+    <script src="../SCRIPTS/tela_administracao.js"></script>
 </body>
 </html>
