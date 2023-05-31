@@ -102,8 +102,67 @@
         </aside>
         <aside class="assideDireito">
             <table>
-                
-       
+                <tr class="nomeTabela">
+                    <th>CPF</th>
+                    <th>Nome</th>
+                    <th>Função<th>
+                </tr>
+                <?php
+
+                // CÓDIGO PHP 
+                include_once "PHPconfig.php";
+
+                // Pega cpf do cliente que foi clicado em editar pelo GET
+                if (isset($_GET['cpf'])) {
+                    $cpfeditar = $_GET['cpf'];
+                }
+
+
+                // Código sql do que vai ser puxado do banco de dados
+                $sql = "SELECT fk_Funcionario_cpf, nome FROM odontologista;";
+
+                // Faz o query (consulta)
+                $result = $conn->query($sql);
+
+                // Enquanto ainda estiver retornando resultados para o 
+                // (ou seja, se ainda tiver mais clientes na lista para iterar)
+                while($funcionario = $result->fetch_assoc())
+                {
+                    // Pega informações do 
+                    $cpf = $funcionario["fk_Funcionario_cpf"];
+                    $nome = $funcionario["nome"];
+                    $funcao = "Doutor";
+                    
+                    // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
+                    if (isset($_GET['cpf']) && $cpf == $cpfeditar)
+                    {
+                        echo "<tr>\n";
+                        echo "<form action='PHPeditar_cliente.php' method='POST'>";
+                        echo "<td class='td_principal'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."></td>\n";
+                        echo "<td class='td_principal'><input type='text' name='nome' value=".$nome."></td>\n";
+
+                        echo "</td>\n";
+
+                        
+
+                        echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
+                        echo "</form>";
+                        echo "</tr>";
+                    }
+                    else
+                    {
+                    echo "<tr>\n";
+                    echo "<td class='td_principal'>".$cpf."</td>\n";
+                    echo "<td class='td_principal'><a>".$nome."</a></td>\n";
+                    echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
+                    echo "</tr>";
+                    }
+                    
+                }
+                // FIM DO CÓDIGO PHP
+                ?>
+                                
+                    
             </table>
         </aside>
         <footer>
