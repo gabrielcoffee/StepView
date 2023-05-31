@@ -82,19 +82,65 @@
             <h3>Seja bem vindo!</h3>
         </header>
         <nav>
+            <button onclick="animarDiv()">Dados</button> 
             <button>Visualizar Estados</button>
             <button onclick="alo()">Visualizar Clientes</button>
             <button onclick="abrirModal()" class="botaoCriar">
                 Registrar funcionario
             </button>
+
         </nav>
         
         <main>
+            <?php
+                include_once "PHPconfig.php";
+                if(!empty($_GET['search']))
+                {
+                    $data = $_GET['search'];
+                    
+                    $sql = "SELECT tipoProcesso, descricao, data_marcada FROM processo WHERE data_marcada LIKE '$data' ";
+
+                    $result = $conn->query($sql);
+                    while($cliente = $result->fetch_assoc())
+                    {
+                        $tipoProcesso = $cliente['tipoProcesso'];
+
+
+                    }
+
+                    
+
+
+                }
+                else
+                {
+                    echo "não temos nada, trazer todos os registros";
+                }
+            ?>
             <div class="containerMainEsquerda">
-                <h3>Ola</h3>
+                <!--<button class="botaoVoltar"><<<</button>USAR DEPOIS-->
             </div>
             <div class="containerMainDireita">
-                <button onclick="animarDiv()">Ola</button>    
+                   <div class="formMain">
+                        <div class="barraDePesquisa">
+                            <button onclick="searchData()">
+                                <svg xmlns="http://www.w3.org/2000/svg"     width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                                </svg>
+                            </button>
+                            <input id="pesquisar" type="date" value="" name="filtrar">
+                        </div>
+                        <div class="datasFiltradas">
+                            <table>
+                                <tr class="nomeTabela">
+                                    <th class="tabelaItens">Processo</th>
+                                    <th class="tabelaItens">Descrição</th>
+                                    <th class="tabelaItens">Doutor</th>
+                                    <th class="tabelaItens">Data</th>
+                                </tr>
+                            </table>
+                        </div>
+                   </div>
             </div>
         
         </main>
