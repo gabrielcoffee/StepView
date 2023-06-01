@@ -1,4 +1,4 @@
-const tela = document.querySelector(".telaModal");
+const tela = document.querySelector(".tela_cadastro");
 const telaDeletar = document.querySelector(".tela_deletar");
 
 function abrirModal()

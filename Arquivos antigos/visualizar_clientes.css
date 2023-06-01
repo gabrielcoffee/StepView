@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
+
+    font-family: 'Roboto Slab', serif;
+}
+
+body > h1
+{
+    
+    align-self: center;
+    color:rgb(240, 248, 255);
+    border-bottom: solid;
+
+}
+
+
+.container
+{
+    width: 80%;
+    height: 80%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E1E6FA;
+    border-radius: 15px;
+}
+
+.botoes{
+    width: 18vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes > button
+{
+    width: 8vw;
+    height: 5vh;
+    
+    margin: 5px;
+    background-color: #FFFAEB;
+    font-size: 1vw;
+
+    border-radius: 15px;
+    border: none;
+    
+}
+
+
+
+.nome_tabela > th
+{
+    background-color: #183152;
+    color: white;
+    width: 15vw;
+    height: 4vh;
+    font-size: 1vw;
+    
+    
+}
+
+
+td
+{
+
+    background-color: #375D81;
+    color: white;
+    width: 60vw;
+    height: 5vh;
+    font-size: 1vw;
+
+}
+
+.checkBox
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    height: 5vh;
+
+}
+
+.checkBox > button
+{
+    width: 5vw;
+    height: 3vh;
+    margin: 0 10px;
+    border-radius: 15px;
+    border: none;
+    background-color: #FFFAEB;
+    color: #183152;
+    font-size: 1vw;
+}
+
+.container > button 
+{
+    width: 10vw;
+    color:#183152;
+}
+
+/*------------------------------------------TELA DO CADASTRO-------------*/
+
+.tela_cadastro
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+
+    overflow: auto;
+}
+
+.tela_cadastro > h1 
+{
+    color:rgb(0, 0, 0);
+    border-bottom: solid;
+    font-size: 2vw;
+}
+
+form
+{
+    background-color: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+
+    width: 20vw;
+    height: 52vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+form::-webkit-scrollbar{
+    width: 1px
+}
+
+
+.inputs {
+    border-radius: 5%;
+    width: 80%;
+    height: 90%;
+    background: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.inputClass > input {
+    font-size: 1vw;
+    font: "open sans extra bold";
+    margin: 15px;
+    background: #c5cce9;
+    border: none;
+    border-bottom: 2px solid rgb(0, 0, 0);;
+    
+}
+
+.InputBotao > button {
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 1vw;
+    border: 0;
+    margin: 15px;
+    padding: 10px;
+
+}
+
+
+.tela_cadastro.ola
+{
+    display: flex;
+    
+   
+}
+
+
+
+
+.botaoSair
+{
+    display: flex;
+    justify-content: center;
+
+
+    background-color: #c5cce9;
+    width: 20vw;
+    height: 10vh;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.botaoSair > button
+{
+    background: #FFFAEB;
+    border-radius: 10%;
+    font-size: 1vw;
+    border: 0;
+    margin: 15px;
+    padding: 10px;
+}
+
+/*----------------------------------------------------------------Tela -----------------------------------------------------------------------------*/
+
+.tela_editar
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tela_editar > h1 
+{
+    color:rgb(0, 0, 0);
+    border-bottom: solid;
+}
+
+form
+{
+    background-color: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 20vw;
+    height: 52vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tela_editar.ola
+{
+    display: flex;
+    
+   
+}
+
+/*--------------------------------------------------------TELA DELETAR------------------------------------------------------------*/
+
+.tela_deletar
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+}
+
+.tela_deletar > h1 
+{
+    color:rgb(0, 0, 0);
+    border-bottom: solid;
+}
+
+form
+{
+    background-color: #c5cce9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 20vw;
+    height: 52vh;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.tela_deletar.ola
+{
+    display: flex;
+    
+   
+}
