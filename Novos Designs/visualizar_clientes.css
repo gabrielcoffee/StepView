@@ -75,6 +75,14 @@ main
 {
     width: 5.5vw;
     font-size: 0.7vw;
+    
+}
+
+.asideCima > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+    
 }
 
 .containerAside:hover .asideTitulo > h2 
@@ -100,6 +108,7 @@ main
     transition: 1s;
     
     
+    
 }
 
 
@@ -121,7 +130,7 @@ main
     font-size: 0;
     transition: 1s;
     
-    background-color: #0CC0DF;
+    border: 2px solid#0CC0DF;
 }
 
 
