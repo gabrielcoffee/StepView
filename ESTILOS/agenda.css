@@ -1,163 +1,186 @@
-/* js agenda */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto+Slab:wght@500&display=swap');
+
 
 body
 {
     padding: 0;
     margin: 0;
-   
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
+
+/*Configuração do Container*/
 
 .container
 {
+    padding: 0;
+    margin: 0;
 
-    display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 20vh 80vh;
-    grid-template-areas: 
-    "h h"
-    "d d";
-    
+    width: 100vw;
+    height: 100vh;
+    background-color: #4567FF;
 
+    display: flex;
+    flex-direction: row;
 }
 
-header
-{
-    grid-area: h;
-    
-}  
+/*Configurações do form da Agenda*/
 
-.titulo
+.containerAgenda
 {
+    width: 30vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.tituloAgenda
+{
+    margin: 70px 0px 40px 0px;
+
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
+
+    border-radius: 20px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
+
+    font-size: 0.9vw;
 }
 
-
-.titulo > h2
+.formAgenda > form
 {
-    box-shadow: 0px 2px;
-    font-size: 2vw;
-    
-}
+    background-color: #FFFFFF;
+    width: 15vw;
+    height: 75vh;
 
+    border-radius: 20px;
 
-.telaEsquerda
-{
-    grid-area: e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #E1E6FA;
-    
-}
-
-.conteudoEsquerda
-{
-    
-    width: 40vw;
-    height: 80%;
-    
-    
-    display: flex;
-    align-items: end;
-    flex-direction: column;
-}
-
-.conteudoEsquerda > h2
-{
-    color: aliceblue;
-    width: 9vw;
-}
-
-
-
-.telaDireita
-{
-    grid-area: d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
-    flex-direction: column;
-    
-    
-}
-.tabelaPegar
-{
-    overflow: auto;
-    height: 70vh;
-    width: 60vw;
-    background-color: #E1E6FA;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+
     
 }
 
-.tabelaPegar > fieldset
+.inputForm
 {
-    margin: 5px;
+    margin: 25px 0px 25px 0px;
 }
 
-.inputData
+.inputForm > input
 {
-    width: 10vw;
-    border-radius: 10px;
+    outline: 0;
+    border-radius: 20px;
+    border: 0;
+
+    background-color: #0CC0DF;
+    width: 13vw;
     height: 5vh;
+
+    font-size: 0.8vw;
+
 }
 
-.inputClass
+.botoesForm
 {
-    width: 25vw;
-    height: 5vh;
-    border-radius: 10px;
-    border: none;
+    margin: 25px 0px 25px 0px;
+    
 }
 
-.inputProcesso
+.botao> button
 {
-    width: 10vw;
-    height: 5vh;
-    border-radius: 10px;
-    border: none;
+    border: 0;
+    border-radius: 20px;
+    background-color: #0CC0DF;
+
+    width: 8vw;
+    height: 3vh;
+
+    font-size: 0.8vw;
 
 }
 
-.labelProcesso
+/*Configurações da área do comentario*/
+
+.comentarios
+{
+    width: 70vw;
+    height: 100vh;
+    
+}
+
+
+
+.caixaComentarios >  legend
 {
     font-size: 1.5vw;
-   
-    border-right: 0.1vw solid black;
-    margin: 1px;
-    padding: 10px;
-      
 }
 
-.inputArea
+table
 {
-    width: 25vw;
-    height: 7vh;
-    border-radius: 10px;
+    margin: 70px 0px 0px 0px;
+    padding: 15px;
+
+
+    height: 85vh;
+    width: 63.5vw;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+    
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+
+
 }
 
-fieldset
+th
 {
-    border: 2.5px solid #92a3b3;
-    border-radius: 10px;
-    font-size: 1vw;
-}
-
-.botaoExcluir
-{
-    color: #92a3b3;
-    background-color: #183152;
-    border: none;
-    border-radius: 5px;
-    width: 6vw;
+    width: 10vw;
     height: 4vh;
+    background-color: #D9D9D9;
+    
+    border-radius: 20px;
+}
+
+
+td
+{
+    width: 10vw;
+    height: 4vh;
+    background-color:#FFFFFF;
+
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+td > button
+{
+    border: 0;
+    border-radius: 20px;
+    background-color: #D9D9D9;
+
+    width: 8vw;
+    height: 3vh;
+
+    font-size: 0.8vw;
+    transition: 0.5s;
+}
+
+
+
+
+
+td > button:hover
+{
+    transform: translateY(-2px);
+    background-color: #2DA3E2;
 }
