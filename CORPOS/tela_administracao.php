@@ -98,16 +98,28 @@
                 {
                     $data = $_GET['search'];
                     
-                    $sql = "SELECT tipoProcesso, descricao, data_marcada FROM processo WHERE data_marcada LIKE '$data' ";
+                    $sql = "SELECT tipoProcesso, descricao, data_marcada FROM processo WHERE tipoProcesso = '$data' ";
+
+                    
 
                     $result = $conn->query($sql);
-                    while($cliente = $result->fetch_assoc())
-                    {
-                        $tipoProcesso = $cliente['tipoProcesso'];
-
-
+                    if ($result === TRUE) {
+    
+                        ?>
+                        <script>
+                            alert("Funcionario encontrado com sucesso!!");
+                        </script>
+                        <?php
+                    
+                    } else {
+                        ?>
+                        <script>
+                            alert("Erro de conexão com servidor, voltando a tela principal");
+                            location.href = "tela_administracao.php";
+                        </script>
+                        <?php
+                        echo "Error: " . $sql . "<br>" . $conn->error;
                     }
-
                     
 
 
@@ -118,7 +130,8 @@
                 }
             ?>
             <div class="containerMainEsquerda">
-                <!--<button class="botaoVoltar"><<<</button>USAR DEPOIS-->
+                
+                <button class="botaoVoltar"><<<</button>    
             </div>
             <div class="containerMainDireita">
                    <div class="formMain">

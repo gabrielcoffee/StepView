@@ -16,9 +16,12 @@ function alo()
 
 }
 function animarDiv() {
-    const div = document.querySelector(".containerMainEsquerda")
-    const div2 = document.querySelector(".containerMainDireita")
-    const botao = document.querySelector(".botaoVoltar")
+    var div = document.querySelector(".containerMainEsquerda");
+    var div2 = document.querySelector(".containerMainDireita");
+    var botao = document.querySelector(".botaoVoltar");
+    console.log(div);
+
+
     div2.style.display = "none";
     botao.style.width = "6vw"
     botao.style.height = "3vh"
