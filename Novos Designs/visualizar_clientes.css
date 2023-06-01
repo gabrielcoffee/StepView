@@ -4,3 +4,132 @@ body
     margin: 0;
 }
 
+/*Configurações da tela*/
+
+.container
+{
+    display: grid;
+    grid-template-columns: 8vw 92vw;
+    grid-template-rows: 92vh 8vh;
+    grid-template-areas: 
+    "a h"
+    "a m";
+
+
+    background-color: #4567FF;
+    
+    width: 100vw;
+    height: 100vh;
+}
+
+/*Configurações do Header*/
+
+header
+{
+ 
+
+    grid-area: h;
+}
+
+/*Configurações do main*/
+
+main
+{
+    grid-area: m;
+
+   
+}
+
+
+
+/*Configurações do aside*/
+
+.containerAside
+{
+    grid-area: a;
+    
+   
+    width: 2vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-top-right-radius: 20px;
+    border-end-end-radius: 20px;
+  
+}
+
+.containerAside:hover 
+{
+ 
+    
+    width: 8vw;
+  
+}
+
+.containerAside:hover .asideCima > button
+{
+    width: 5.5vw;
+    font-size: 0.7vw;
+}
+
+.containerAside:hover .asideTitulo > h2 
+{
+    transform: rotate(0deg);
+}
+
+
+.asideTitulo
+{
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.asideTitulo > h2
+{
+    transform: rotate(-90deg);
+    font-size: 1.5vw;
+    transition: 1s;
+    
+    
+}
+
+
+.asideCima
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.asideCima > button {
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 1.5vw;
+    height: 4vh;
+    font-size: 0;
+    transition: 1s;
+    
+    background-color: #0CC0DF;
+}
+
+
+.asideBaixo
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
