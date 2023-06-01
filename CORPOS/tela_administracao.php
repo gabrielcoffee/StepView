@@ -94,11 +94,12 @@
         <main>
             <?php
                 include_once "PHPconfig.php";
-                if(!empty($_GET['search']))
+                if(isset($_GET['search']))
                 {
                     $data = $_GET['search'];
+                    echo $data;
                     
-                    $sql = "SELECT tipoProcesso, descricao, data_marcada FROM processo WHERE tipoProcesso = '$data' ";
+                    $sql = "SELECT tipoProcesso, descricao FROM processo WHERE data_marcada = '$data' ";
 
                     
 
@@ -179,7 +180,8 @@
 
 
                 // Código sql do que vai ser puxado do banco de dados
-                $sql = "SELECT fk_Funcionario_cpf, nome FROM odontologista;";
+                $sql = "SELECT td1.fk_Funcionario_cpf, td1.nome, td2.fk_Funcionario_cpf, td2.nome  
+                FROM odontologista as td1, secretaria as td2";
 
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
@@ -191,7 +193,7 @@
                     // Pega informações do 
                     $cpf = $funcionario["fk_Funcionario_cpf"];
                     $nome = $funcionario["nome"];
-                    $funcao = "Doutor";
+                    $funcao = "Nada definido";
                     
                     // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
