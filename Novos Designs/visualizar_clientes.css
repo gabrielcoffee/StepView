@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto+Slab:wght@500&display=swap');
+
+
 body
 {
     padding: 0;
     margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 /*Configurações da tela*/
@@ -10,7 +15,7 @@ body
 {
     display: grid;
     grid-template-columns: 8vw 92vw;
-    grid-template-rows: 92vh 8vh;
+    grid-template-rows: 14vh 86vh;
     grid-template-areas: 
     "a h"
     "a m";
@@ -26,9 +31,29 @@ body
 
 header
 {
- 
-
     grid-area: h;
+}
+
+.titulo
+{
+    height: 14vh;
+    
+    display: flex;
+    align-items: end;
+}
+
+.titulo > h2
+{
+    margin: 0;
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
 }
 
 /*Configurações do main*/
@@ -36,10 +61,115 @@ header
 main
 {
     grid-area: m;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
    
 }
 
+.barraDePesquisa
+{
+    width: 86vw;
+    height: 10vh;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+
+    display: flex;
+    justify-content: center;
+}
+
+.formPesquisar
+{
+    margin-top: 20px;
+
+    width: 12vw;
+    height: 4vh;
+
+    border-radius: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: white;
+}
+
+.formPesquisar > button
+{
+    border: none;
+    background-color: white;
+}
+
+
+.inputPesquisa
+{
+    border: none;
+    outline: none;
+}
+
+
+table
+{
+    width: 86vw;
+    height: 68vh;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+.tituloTabela
+{
+    width: 10vw;
+    height: 4vh;
+    background-color: #D9D9D9;
+
+    border-radius: 20px;
+    
+    margin-bottom: 20px;
+}
+
+td
+{
+    width: 10vw;
+    height: 4vh;
+    background-color: white;
+
+    border-radius: 20px;
+
+    margin-bottom: 40px;
+
+    text-align: center;
+}
+
+td > button
+{
+    width: 4vw;
+    height: 2vh;
+    background-color: white;
+    border: 2px solid #0CC0DF;
+    border-radius: 20px;
+    transition: 1s;
+}
+
+td > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+}
 
 
 /*Configurações do aside*/
@@ -67,13 +197,13 @@ main
 {
  
     
-    width: 8vw;
+    width: 7vw;
   
 }
 
 .containerAside:hover .asideCima > button
 {
-    width: 5.5vw;
+    width: 4.5vw;
     font-size: 0.7vw;
     
 }
@@ -104,7 +234,7 @@ main
 .asideTitulo > h2
 {
     transform: rotate(-90deg);
-    font-size: 1.5vw;
+    font-size: 1.3vw;
     transition: 1s;
     
     
@@ -141,4 +271,138 @@ main
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+
+/*Configuração da tela Modal*/
+
+.telaModal.ola
+{
+    display: flex;
+}
+
+.telaModal
+{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+
+    position: absolute;
+    background-color: #ffffff96;
+    width: 100vw;
+    height: 100vh;
+}
+
+.legendaBotao
+{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    width: 14.8vw;
+    height: 2vh;
+    background-color: white;
+}
+
+.botaoSair
+{
+    width: 3vw;
+    height: 3vh;
+    border-radius: 20px;
+    background-color: red;
+    border: 0;
+}
+
+.containerModal
+{
+    
+    
+    width: 15vw;
+    height: 80vh;
+}
+
+.tituloRegistrar
+{
+    background-color: white;
+    width: 15vw;
+    height: 6vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+    border-radius: 20px;
+
+}
+
+.formRegistrar > form
+{
+    width: 15vw;
+    height: 73vh;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.inputForm
+{
+    margin: 25px 0px 25px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputForm > input
+{
+    outline: 0;
+    border-radius: 20px;
+    border: 0;
+
+    background-color: #0CC0DF;
+    width: 13vw;
+    height: 5vh;
+
+    font-size: 0.8vw;
+
+}
+
+
+.botoesForm
+{
+   
+    
+}
+
+.botoesForm> button
+{
+    border: 0;
+    border-radius: 20px;
+    background-color: #0CC0DF;
+
+    margin-right: 20px;
+    margin-left: 20px;
+
+    width: 4vw;
+    height: 3vh;
+
+    font-size: 0.8vw;
+
+}
+
+legend 
+{
+    
+}
+
+fieldset
+{
+    border: 2px solid #0CC0DF;
+    border-radius: 20px;
 }
