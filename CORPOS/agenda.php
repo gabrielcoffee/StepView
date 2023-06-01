@@ -28,7 +28,7 @@
                 while($processo = $result->fetch_assoc()){
                     $tipoProcesso = $processo["tipoProcesso"];
                     $descricao   = $processo["descricao"];
-                    $data = $processo["data"];
+                    $data = $processo["data_marcada"];
                     $id = $processo["idProcesso"];
 
                     echo "<fieldset>";

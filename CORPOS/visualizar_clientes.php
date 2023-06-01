@@ -183,7 +183,7 @@
                     {
                         echo "<tr>\n";
                     echo "<td class='td_principal'>".$cpf."</td>\n";
-                    echo "<td class='td_principal'><a href='agenda.php?CPF=".$cpf."'>".$nome."</a></td>\n";
+                    echo "<td class='td_principal'><a href='../Novos Dedigns/agenda.php?CPF=".$cpf."'>".$nome."</a></td>\n";
                     echo "<td class='td_principal'>".$email."</td>\n";
                     echo "<td class='td_principal'>".$telefone."</td>\n";
                     echo "<td class='td_principal'>".$sexo."</td>\n";
