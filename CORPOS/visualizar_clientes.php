@@ -65,10 +65,50 @@
         </header>
         <main>
             <div class="barraDePesquisa">
-                
+            <?php
+                include_once "PHPconfig.php";
+                if(!empty($_GET['search'])) 
+                {
+                    $data = $_GET['search'];
+                    
+                    
+                    
+                    $sql = "SELECT nome FROM cliente WHERE cpf = '$data' ";
+                    
+
+
+                   
+
+                    $result = $conn->query($sql);
+                    if ($result === TRUE) {
+    
+                        ?>
+                        <script>
+                            alert("Funcionario encontrado com sucesso!!");
+                        </script>
+                        <?php
+                    
+                    } else {
+                        ?>
+                        <script>
+                            alert($data2);
+                            location.href = "tela_administracao.php";
+                        </script>
+                        <?php
+                        echo "Error: " . $sql . "<br>" . $conn->error;
+                    }
+                    
+
+
+                }
+                else
+                {
+                    echo "não temos nada, trazer todos os registros";
+                }
+            ?>
                 <form class="formPesquisar">
                     <input type="text" name="pesquisar" value="" placeholder="Pesquisar" class="inputPesquisa">
-                    <button><svg fill="#000000" width="1vw" height="2vh" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                    <button id="pesquisar" onclick="searchData()"><svg fill="#000000" width="1vw" height="2vh" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.027 9.92L16 13.95 14 16l-4.075-3.976A6.465 6.465 0 0 1 6.5 13C2.91 13 0 10.083 0 6.5 0 2.91 2.917 0 6.5 0 10.09 0 13 2.917 13 6.5a6.463 6.463 0 0 1-.973 3.42zM1.997 6.452c0 2.48 2.014 4.5 4.5 4.5 2.48 0 4.5-2.015 4.5-4.5 0-2.48-2.015-4.5-4.5-4.5-2.48 0-4.5 2.014-4.5 4.5z" fill-rule="evenodd"/>
                     </svg></button>
                 </form>

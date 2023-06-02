@@ -97,11 +97,14 @@
                 if(isset($_GET['search']))
                 {
                     $data = $_GET['search'];
-                    echo $data;
                     
-                    $sql = "SELECT tipoProcesso, descricao FROM processo WHERE data_marcada = '$data' ";
+                    
+                    
+                    $sql = "SELECT tipoProcesso, descricao, data_marcada FROM processo WHERE data_marcada LIKE '%$data%'";
+                    
 
-                    
+
+                   
 
                     $result = $conn->query($sql);
                     if ($result === TRUE) {
@@ -115,7 +118,7 @@
                     } else {
                         ?>
                         <script>
-                            alert("Erro de conexão com servidor, voltando a tela principal");
+                            alert($data2);
                             location.href = "tela_administracao.php";
                         </script>
                         <?php

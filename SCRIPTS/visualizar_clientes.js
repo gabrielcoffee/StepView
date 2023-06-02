@@ -29,6 +29,11 @@ function sairModal()
     tela.classList.remove("ola");
     telaDeletar.classList.remove("ola");
 }
+function searchData()
+{
+    var search = document.getElementById('pesquisar');
+    window.location = 'tela_administracao.php?search='+search.value;
+}
 
 
 console.log(tela);
