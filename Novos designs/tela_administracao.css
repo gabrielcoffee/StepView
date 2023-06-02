@@ -183,6 +183,7 @@ header
 .formPesquisar
 {
     margin-top: 20px;
+    margin-bottom: 20px;
 
     width: 12vw;
     height: 4vh;
@@ -226,6 +227,15 @@ header
     background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
+.tituloDataTabela
+{
+    width: 8vw;
+    height: 4vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+
+    text-align: center;
+}
 
 
 
