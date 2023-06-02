@@ -2,7 +2,7 @@ body
 {
     margin: 0;
     padding: 0;
-    background-image: linear-gradient(to left,#E1E6FA,#ABC8E2 );
+    background-color: #4567FF;
     width: 100vw;
     height: 100vh;
     
@@ -155,7 +155,7 @@ body
 .container
 {
     display: grid;
-    grid-template-columns: 2vw 68vw 29vw;
+    grid-template-columns: 8vw 50vw 42vw;
     grid-template-rows: 15vh 5vh 75vh 5vh;
     grid-template-areas: 
     "e h h"
@@ -174,16 +174,45 @@ header
 .assideDireito
 {
     grid-area: d;
-    border-radius: 15px;
-    border: 2px solid black;
+    border-radius: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.tableFuncionarios
+{
+    width: 48vw;
+    height: 78vh;
+
+    border-radius: 20px;
+
+    display: flex   ;
+    justify-content: center;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
 .tabelaTitulos
 {
-    background-color: rgb(134, 207, 236);
-    width: 6vw;
-    height: 4vh;
-    border-radius: 15px;
+
+
+    width: 8vw;
+    height: 3vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.td_principal
+{
+    width: 8vw;
+    height: 3vh;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center; 
 }
 
 .assideEsquerdo
@@ -263,18 +292,37 @@ main
 
 .containerMainDireita
 {
-    width: 68vw;
-    height: 75vh;
+    width: 34vw;
+    height: 78vh;
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
+
 }
+
+.formMain
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tabelaDatas
+{
+    width: 34vw;
+    height: 40vh;
+
+    background-color: white;
+}
+
 
 .barraDePesquisa
 {
     display: flex;
     justify-content: center;
     margin: 15px;
-    width: 64vw;
+    width: 30vw;
     height: 3vh;
     background-color: #2DA3E2;
 }
@@ -300,3 +348,4 @@ footer
 {
     grid-area: f;
 }
+

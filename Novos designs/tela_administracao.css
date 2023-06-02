@@ -1,0 +1,240 @@
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+.container
+{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #4567FF;
+
+    display: grid;
+    grid-template-columns: 8vw 46vw 38vw 8vw;
+    grid-template-rows: 14vh  40vh 40vh 6vh;
+
+    grid-template-areas: 
+    "a1 h h a2"
+    "a1 td tf a2"
+    "a1 td tf a2"
+    "a1 f f a2"
+    ;
+
+}
+
+.asideDireito
+{
+    grid-area: a2;
+}
+
+/*-----------------------------------ASIDE ESQUERDO-----------------------*/
+
+.asideEsquerdo
+{
+    grid-area: a1;
+}
+
+.containerAside
+{
+    grid-area: a;
+    
+   
+    width: 2vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-top-right-radius: 20px;
+    border-end-end-radius: 20px;
+  
+}
+
+.containerAside:hover 
+{
+ 
+    
+    width: 7vw;
+  
+}
+
+.containerAside:hover .asideCima > button
+{
+    width: 4.5vw;
+    font-size: 0.7vw;
+    
+}
+
+.asideCima > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+    
+}
+
+.containerAside:hover .asideTitulo > h2 
+{
+    transform: rotate(0deg);
+}
+
+
+.asideTitulo
+{
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.asideTitulo > h2
+{
+    transform: rotate(-90deg);
+    font-size: 1.3vw;
+    transition: 1s;
+    
+    
+    
+}
+
+
+.asideCima
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.asideCima > button {
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 1.5vw;
+    height: 4vh;
+    font-size: 0;
+    transition: 1s;
+    
+    border: 2px solid#0CC0DF;
+}
+
+
+.asideBaixo
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------HEADER-----------------------*/
+
+header
+{
+    grid-area: h;
+}
+
+/*-----------------------------------CONTAINER DATA-----------------------*/
+
+
+.containerData
+{
+    grid-area: td;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.tituloData
+{
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+
+    text-align: center;
+    
+    margin-bottom: 30px;
+}
+
+.pesquisarDiv
+{
+    display: flex;
+    justify-content:center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+}
+
+
+.formPesquisar
+{
+    margin-top: 20px;
+
+    width: 12vw;
+    height: 4vh;
+
+    border-radius: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: white;
+}
+
+.formPesquisar > button
+{
+    border: none;
+    background-color: white;
+}
+
+
+.inputPesquisa
+{
+    border: none;
+    outline: none;
+}
+
+.tabelaData
+{
+    height: 70vh;
+    width: 46vw;
+
+    display: flex;
+    justify-content: center;
+
+
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+}
+
+
+
+
+.containerFuncionario
+{
+    grid-area: tf;
+}
+
+footer
+{
+    grid-area: f;
+}

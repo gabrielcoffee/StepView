@@ -130,7 +130,7 @@
                 }
                 else
                 {
-                    echo "não temos nada, trazer todos os registros";
+                   
                 }
             ?>
             <div class="containerMainEsquerda">
@@ -148,7 +148,7 @@
                             <input id="pesquisar" type="date" value="" name="filtrar">
                         </div>
                         <div class="datasFiltradas">
-                            <table>
+                            <table class="tabelaDatas">
                                 <tr class="nomeTabela">
                                     <th class="tabelaItens">Processo</th>
                                     <th class="tabelaItens">Descrição</th>
@@ -165,11 +165,12 @@
             <h1>StepView</h1>
         </aside>
         <aside class="assideDireito">
-            <table>
+            <table class="tableFuncionarios">
                 <tr class="nomeTabela">
                     <th class="tabelaTitulos">CPF</th>
                     <th class="tabelaTitulos" >Nome</th>
-                    <th class="tabelaTitulos">Função<th>
+                    <th class="tabelaTitulos">Função</th>
+                    <th class="tabelaTitulos">Selecionar</th>
                 </tr>
                 <?php
 
