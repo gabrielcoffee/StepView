@@ -66,58 +66,39 @@
         <main>
             <div class="barraDePesquisa">
             <?php
+                // CÓDIGO PHP 
                 include_once "PHPconfig.php";
-                if(!empty($_GET['pesquisar'])) 
-                {
-                    $data = ($_GET['pesquisar']);
-                    
-                    
-                    
-                    $sql = "SELECT cpf, nome, email, telefone, sexo, nascimento
-                    FROM cliente as cli 
-                    WHERE cli.nome = '$data';";
 
-                    
-                    
+                // Código para Processos em certa data
+                if (isset($_GET['pesquisar'])) {
+                    $data = $_GET['pesquisar'];
 
-
-                   
-
-                    $result = $conn->query($sql);
-                    
-                    if ($result === TRUE) {
-    
-                        ?>
-                        <script>
-                            alert("Funcionario encontrado com sucesso!!");
-                        </script>
-                        <?php
-                    
-                    } else {
-                        ?>
-                        <script>
-                            alert($data2);
-                            location.href = "tela_administracao.php";
-                        </script>
-                        <?php
-                        echo "Valor de data: " . $data . "<br>"; 
-                        echo "Error: " . $sql . "<br>" . $conn->error;
-                    }
-                    
+                    $sql = "SELECT * 
+                    FROM cliente    
+                    WHERE nome LIKE '%$data%';";
 
 
                 }
                 else
+                // Código para todos os Processos
                 {
-                    $data = ($_GET['pesquisar']);
-                    
-                    
-                    
-                    $sql = "SELECT nome FROM cliente WHERE nome LIKE '%$data%' ";
-                    echo "não temos nada, trazer todos os regiaaaaaastros";
-                    echo $data;
+                    $sql = "SELECT * 
+                    FROM cliente 
+                    WHERE nome LIKE '%$data%';";
                 }
-            ?>
+
+                
+                // Faz o query (consulta)
+                $result = $conn->query($sql);
+
+                $processo = $result->fetch_assoc();
+
+                    $processo["nome"];
+
+                echo $nome;
+
+
+                ?>
                 <form class="formPesquisar">
                     <input type="text" name="pesquisar" value="" placeholder="Pesquisar" class="inputPesquisa">
                     <button id="pesquisar" onclick="searchData()"><svg fill="#000000" width="1vw" height="2vh" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
