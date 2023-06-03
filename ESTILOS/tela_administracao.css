@@ -1,11 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&family=Roboto+Slab:wght@500&display=swap');
+
 body
 {
-    margin: 0;
     padding: 0;
-    background-color: #4567FF;
-    width: 100vw;
-    height: 100vh;
-    
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    font-family: 'Roboto Slab', serif;
 }
 
 .telaModal
@@ -152,195 +152,394 @@ body
 }
 
 
+
+
+
+/*----------------------------------------------------------------CONTAINER GERAL------------------------------*/
+
 .container
 {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #4567FF;
+
     display: grid;
-    grid-template-columns: 8vw 50vw 42vw;
-    grid-template-rows: 15vh 5vh 75vh 5vh;
+    grid-template-columns: 8vw 46vw 38vw 8vw;
+    grid-template-rows: 14vh  40vh 40vh 6vh;
+
     grid-template-areas: 
-    "e h h"
-    "e n d"
-    "e m d"
-    "e f f";
+    "a1 h h a2"
+    "a1 td tf a2"
+    "a1 td tf a2"
+    "a1 f f a2"
+    ;
+
+    
+
 }
+
+.asideDireito
+{
+    grid-area: a2;
+}
+
+/*-----------------------------------ASIDE ESQUERDO-----------------------*/
+
+.asideEsquerdo
+{
+    grid-area: a1;
+}
+
+.containerAside
+{
+    grid-area: a;
+    
+   
+    width: 2vw;
+    height: 100vh;
+    background-color: #FFFFFF;
+    transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border-top-right-radius: 20px;
+    border-end-end-radius: 20px;
+  
+}
+
+.containerAside:hover 
+{
+ 
+    
+    width: 7vw;
+  
+}
+
+.containerAside:hover .asideCima > button
+{
+    width: 4.5vw;
+    font-size: 0.7vw;
+    
+}
+
+.asideCima > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+    
+}
+
+.containerAside:hover .asideTitulo > h2 
+{
+    transform: rotate(0deg);
+}
+
+
+.asideTitulo
+{
+    height: 40vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.asideTitulo > h2
+{
+    transform: rotate(-90deg);
+    font-size: 1.3vw;
+    transition: 1s;
+    
+    
+    
+}
+
+
+.asideCima
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.asideCima > button {
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 1.5vw;
+    height: 4vh;
+    font-size: 0;
+    transition: 1s;
+    
+    border: 2px solid#0CC0DF;
+}
+
+
+.asideBaixo
+{
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------HEADER-----------------------*/
 
 header
 {
     grid-area: h;
-    display: flex;
-    justify-content: center;
 }
 
-.assideDireito
+/*-----------------------------------CONTAINER DATA-----------------------*/
+
+
+.containerData
 {
-    grid-area: d;
+    grid-area: td;
+
+    display: flex;
+    flex-direction: column;
+
+
+
+}
+
+.tituloData
+{
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
     border-radius: 20px;
+
     
+    
+    margin-bottom: 30px;
 
     display: flex;
     justify-content: center;
-    
+    align-items: center;
 }
 
-.tableFuncionarios
+.pesquisarDiv
 {
-    width: 48vw;
-    height: 78vh;
+    display: flex;
+    justify-content:center;
 
-    border-radius: 20px;
-
-    display: flex   ;
-    justify-content: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 
     background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
-.tabelaTitulos
+
+.formPesquisar
 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    width: 12vw;
+    height: 4vh;
+
+    border-radius: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
+    background-color: white;
+}
+
+.formPesquisar > button
+{
+    border: none;
+    background-color: white;
+}
+
+
+.inputPesquisa
+{
+    border: none;
+    outline: none;
+}
+
+.tabelaData
+{
+    height: 68vh;
+    width: 46vw;
+
+    display: flex;
+    justify-content: center;
+
+
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+}
+
+.tituloDataTabela
+{
     width: 8vw;
-    height: 3vh;
+    height: 4vh;
     background-color: #D9D9D9;
     border-radius: 20px;
+
     text-align: center;
 }
 
-.td_principal
+
+
+.containerFuncionario
 {
-    width: 8vw;
-    height: 3vh;
-    background-color: white;
-    border-radius: 20px;
-    text-align: center; 
+    grid-area: tf;
+    margin-left: 20px;
 }
 
-.assideEsquerdo
+.tituloFuncionario
 {
-    grid-area: e;
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+
     display: flex;
+    justify-content: center;
     align-items: center;
     
+    margin-bottom: 30px;
 }
 
-.assideEsquerdo > h1
+.tabelaFuncionarios
 {
-    transform: rotate(90deg);
-    width: 2vw;
-    margin: 0;
-    padding: 0;
-    
-}
+    height: 63vh;
+    width: 40vw;
 
-nav
-{
-    grid-area: n;
     display: flex;
+    justify-content: center;
+
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
     
-    justify-content: end;
+
+    
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
-nav > button 
+.tituloData
 {
-    margin: 5px;
-    border: none;
-    border-radius: 15px;
-    border: 2px solid #2DA3E2;
+    width: 15vw;
+    height: 6vh;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+
+    
+    
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloFuncionarioTabela
+{
     width: 8vw;
     height: 4vh;
-    
-    transition: 0.5s;
+    background-color: #D9D9D9;
+    border-radius: 20px;
 
+    text-align: center;
 }
 
-nav > button:hover
+.itemFuncionarioTabela
 {
-    transform: translateY(-5px);
-    background-color: #2DA3E2;
+    width: 8vw;
+    height: 4vh;
+    background-color: #ffffff;
+    border-radius: 20px;
+
+    text-align: center;
 }
 
-
-
-
-main
+.itemFuncionarioTabela > button
 {
-    grid-area: m;
-    border: 2px solid black;
-    display: flex;
-    flex-direction: row;
-}
+    width: 3.5vw;
+    height: 2vh;
+    background-color: #D9D9D9;
 
-.containerMainEsquerda
-{
-    
-    width: 0vw;
-    height: 0vh;
-    background-color: red;
-    transition: width 0.5s, height 0.5s;
-}
-
-.botaoVoltar
-{
-    font-size: 0vw;
-    width: 0;
-    height: 0;
+    border-radius: 20px;
     border: none;
-    transition: width 0.8s, height 0.8s;
+
+    transition: 1s;
+}
+
+.itemFuncionarioTabela > button:hover
+{
+    transform: translateY(-2px);
+    background-color: #0CC0DF;
 }
 
 
 
-.containerMainDireita
+
+
+
+
+
+.pesquisarDivFuncionario
 {
-    width: 34vw;
-    height: 78vh;
     display: flex;
-    flex-direction: column;
+    justify-content:center;
 
-    justify-content: center;
+    width: 40vw;
 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
-.formMain
+
+.formPesquisarFuncionario
 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    width: 12vw;
+    height: 4vh;
+
+    border-radius: 20px;
+    
+
     display: flex;
-    flex-direction: column;
     justify-content: center;
-}
+    align-items: center;
 
-.tabelaDatas
-{
-    width: 34vw;
-    height: 40vh;
 
     background-color: white;
 }
 
-
-.barraDePesquisa
+.formPesquisarFuncionario > button
 {
-    display: flex;
-    justify-content: center;
-    margin: 15px;
-    width: 30vw;
-    height: 3vh;
-    background-color: #2DA3E2;
+    border: none;
+    background-color: white;
 }
 
-.datasFiltradas
-{
-    width: 68vw;
-    height: 72vh;
-    display: flex;
-    justify-content: center;
-    align-items:start;
 
-}
-
-.tabelaItens
+.inputPesquisaFuncionario
 {
-    width: 6vw;
-    height: 3vh;
+    border: none;
+    outline: none;
 }
 
 
@@ -348,4 +547,3 @@ footer
 {
     grid-area: f;
 }
-

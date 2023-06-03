@@ -1,0 +1,351 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #4567FF;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.telaModal
+{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #ffffffab;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.telaModal.ola
+{
+    display: flex;
+}
+
+
+
+
+.botaoSair > button
+{
+    background-color: red;
+    position: absolute;
+    bottom: 73vh;
+    left: 22.5vw;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 15px;
+}
+
+.containerForm
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.formOdonto
+{
+    width: 25vw;
+    height: 50vh;
+    background-color: #2DA3E2;
+    margin: 0px 30px 0px 30px ;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.formOdonto > form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formOdonto > h1
+{
+    font-size: 1.6vw;
+}
+
+.formOdonto > form > div
+{
+    margin: 1vw;
+    
+}
+
+.formOdonto > form > div > input
+{
+    border: 0;
+    width: 12vw;
+    height: 3vh;
+    border-radius: 15px;
+    
+}
+
+.botoes > button
+{
+    background-color: aqua;
+    border: 0;
+    border-radius: 15px;
+    width: 10vw;
+    height: 3vh;
+}
+
+/*----------------------------------SECRETARIA----------------*/
+
+.formSecre
+{
+    width: 25vw;
+    height: 50vh;
+    background-color: #2DA3E2;
+    margin: 0px 30px 0px 30px ;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSecre > form
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSecre > h3
+{
+    font-size: 1.6vw;
+}
+
+.formSecre > form > div
+{
+    margin: 1vw;
+    
+}
+
+.formSecre > form > div > input
+{
+    border: 0;
+    width: 12vw;
+    height: 3vh;
+    border-radius: 15px;
+    
+}
+
+.botoes > button
+{
+    background-color: aqua;
+    border: 0;
+    border-radius: 15px;
+    width: 10vw;
+    height: 3vh;
+}
+
+
+.container
+{
+    display: grid;
+    grid-template-columns: 8vw 50vw 42vw;
+    grid-template-rows: 15vh 5vh 75vh 5vh;
+    grid-template-areas: 
+    "e h h"
+    "e n d"
+    "e m d"
+    "e f f";
+}
+
+header
+{
+    grid-area: h;
+    display: flex;
+    justify-content: center;
+}
+
+.assideDireito
+{
+    grid-area: d;
+    border-radius: 20px;
+    
+
+    display: flex;
+    justify-content: center;
+    
+}
+
+.tableFuncionarios
+{
+    width: 48vw;
+    height: 78vh;
+
+    border-radius: 20px;
+
+    display: flex   ;
+    justify-content: center;
+
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
+}
+
+.tabelaTitulos
+{
+
+
+    width: 8vw;
+    height: 3vh;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.td_principal
+{
+    width: 8vw;
+    height: 3vh;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center; 
+}
+
+.assideEsquerdo
+{
+    grid-area: e;
+    display: flex;
+    align-items: center;
+    
+}
+
+.assideEsquerdo > h1
+{
+    transform: rotate(90deg);
+    width: 2vw;
+    margin: 0;
+    padding: 0;
+    
+}
+
+nav
+{
+    grid-area: n;
+    display: flex;
+    
+    justify-content: end;
+}
+
+nav > button 
+{
+    margin: 5px;
+    border: none;
+    border-radius: 15px;
+    border: 2px solid #2DA3E2;
+    width: 8vw;
+    height: 4vh;
+    
+    transition: 0.5s;
+
+}
+
+nav > button:hover
+{
+    transform: translateY(-5px);
+    background-color: #2DA3E2;
+}
+
+
+
+
+main
+{
+    grid-area: m;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.containerMainEsquerda
+{
+    
+    width: 0vw;
+    height: 0vh;
+    background-color: red;
+    transition: width 0.5s, height 0.5s;
+}
+
+.botaoVoltar
+{
+    font-size: 0vw;
+    width: 0;
+    height: 0;
+    border: none;
+    transition: width 0.8s, height 0.8s;
+}
+
+
+
+.containerMainDireita
+{
+    width: 34vw;
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+.formMain
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tabelaDatas
+{
+    width: 34vw;
+    height: 40vh;
+
+    background-color: white;
+}
+
+
+.barraDePesquisa
+{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    width: 30vw;
+    height: 3vh;
+    background-color: #2DA3E2;
+}
+
+.datasFiltradas
+{
+    width: 68vw;
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    align-items:start;
+
+}
+
+.tabelaItens
+{
+    width: 6vw;
+    height: 3vh;
+}
+
+
+footer
+{
+    grid-area: f;
+}
+

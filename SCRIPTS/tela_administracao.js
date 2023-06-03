@@ -15,6 +15,7 @@ function alo()
     location.href = "visualizar_clientes.php";
 
 }
+/*
 function animarDiv() {
     var div = document.querySelector(".containerMainEsquerda");
     var div2 = document.querySelector(".containerMainDireita");
@@ -30,7 +31,7 @@ function animarDiv() {
     
    
     
-  }
+}*/
 
 
 function searchData()
