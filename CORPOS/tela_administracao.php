@@ -121,6 +121,62 @@
                     <td class="tituloDataTabela">Descricao</td>
                     <td class="tituloDataTabela">Nome</td>
                 </tr>
+
+                <?php
+                // CÓDIGO PHP 
+                include_once "PHPconfig.php";
+
+                // Pega cpf do cliente que foi clicado em editar pelo GET
+                if (isset($_GET['cpf'])) {
+                    $cpfeditar = $_GET['cpf'];
+                }
+
+
+                // Código para Odontologista
+                $sql = "SELECT odo.fk_Funcionario_cpf, odo.nome 
+                FROM odontologista as odo";
+
+                // Faz o query (consulta)
+                $result = $conn->query($sql);
+
+                // Enquanto ainda estiver retornando resultados para o 
+                // (ou seja, se ainda tiver mais clientes na lista para iterar)
+                while($funcionario = $result->fetch_assoc())
+                {
+                    // Pega informações do 
+                    $cpf = $funcionario["fk_Funcionario_cpf"];
+                    $nome = $funcionario["nome"];
+                    $funcao = "Odontologista";
+                    
+                    // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
+                    if (isset($_GET['cpf']) && $cpf == $cpfeditar)
+                    {
+                        echo "<tr>\n";
+                        echo "<form action='PHPeditar_cliente.php' method='POST'>";
+                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."></td>\n";
+                        echo "<td class='itemFuncionarioTabela'><input type='text' name='nome' value=".$nome."></td>\n";
+                        
+                        echo "</td>\n";
+
+                        
+
+                        echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
+                        echo "</form>";
+                        echo "</tr>";
+                    }
+                    else
+                    {
+                    echo "<tr>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
+                    echo "</tr>";
+                    }
+                    
+                }
+
+                ?>
             </table>
 
         </div>
