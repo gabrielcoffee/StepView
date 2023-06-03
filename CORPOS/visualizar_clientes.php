@@ -67,13 +67,16 @@
             <div class="barraDePesquisa">
             <?php
                 include_once "PHPconfig.php";
-                if(!empty($_GET['search'])) 
+                if(!empty($_GET['pesquisar'])) 
                 {
-                    $data = $_GET['search'];
+                    $data = ($_GET['pesquisar']);
                     
                     
                     
-                    $sql = "SELECT nome FROM cliente WHERE cpf = '$data' ";
+                    $sql = "SELECT cpf, nome, email, telefone, sexo, nascimento
+                    FROM cliente WHERE nome LIKE '%$data%' ";
+
+                    
                     
 
 
@@ -103,7 +106,13 @@
                 }
                 else
                 {
-                    echo "não temos nada, trazer todos os registros";
+                    $data = ($_GET['pesquisar']);
+                    
+                    
+                    
+                    $sql = "SELECT nome FROM cliente WHERE nome LIKE '%$data%' ";
+                    echo "não temos nada, trazer todos os regiaaaaaastros";
+                    echo $data;
                 }
             ?>
                 <form class="formPesquisar">
