@@ -15,6 +15,15 @@ function alo()
     location.href = "visualizar_clientes.php";
 
 }
+
+function abrirConfirmarDeletar(idProcesso)
+{
+    if (window.confirm("Realmente deseja deletar o processo?")) {
+        location.href = "PHPdeletar_processo.php?id_pro=" + idProcesso;
+    }
+    
+}
+
 /*
 function animarDiv() {
     var div = document.querySelector(".containerMainEsquerda");
@@ -33,9 +42,8 @@ function animarDiv() {
     
 }*/
 
-
 function searchData()
 {
-    var search = document.getElementById('pesquisar');
-    window.location = 'tela_administracao.php?search='+search.value;
+    var data = document.getElementById('pro_data').value;
+    location.href = 'tela_administracao.php?pesquisar=' + data;
 }
