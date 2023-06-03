@@ -74,7 +74,8 @@
                     
                     
                     $sql = "SELECT cpf, nome, email, telefone, sexo, nascimento
-                    FROM cliente WHERE nome LIKE '%$data%' ";
+                    FROM cliente as cli 
+                    WHERE cli.nome = '$data';";
 
                     
                     
