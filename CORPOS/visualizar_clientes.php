@@ -83,6 +83,7 @@
                    
 
                     $result = $conn->query($sql);
+                    
                     if ($result === TRUE) {
     
                         ?>
@@ -98,6 +99,7 @@
                             location.href = "tela_administracao.php";
                         </script>
                         <?php
+                        echo "Valor de data: " . $data . "<br>"; 
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }
                     
