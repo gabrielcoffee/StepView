@@ -8,7 +8,6 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
-exit();
 
 ?>
 

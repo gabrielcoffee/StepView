@@ -3,7 +3,7 @@
 session_start();
 
 // Confere se funcionario esta logado senão envia para login
-if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
+if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["logged"] != "admin")
 {
     header("Location: ../index.html");
 }

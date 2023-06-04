@@ -2,13 +2,13 @@
 // Inicia session
 session_start();
 
-// Confere se funcionario esta logado senão envia para login
+// Confere se admin esta logado senão envia para login
 if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
 {
     header("Location: ../index.html");
 }
 
-exit();
+
 
 ?>
 <!DOCTYPE html>
