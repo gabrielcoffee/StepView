@@ -39,7 +39,7 @@
                             <input name="senha" type="password" placeholder="Senha">
                         </div>
                         <div class="botoes">
-                            <button type="submit">Registrar</button>
+                            <button onclick="validarFormulario(event)" type="submit">Registrar</button>
                         </div>
 
 
@@ -67,7 +67,9 @@
                             <input name="senha" type="password" placeholder="Senha">
                         </div>
                         <div class="botoes">
-                            <button>Registrar</button>
+                                                                                        
+                            <button onclick="validarFormulario(event)">Registrar</button>
+
                         </div>
                     </form>
                 </div>

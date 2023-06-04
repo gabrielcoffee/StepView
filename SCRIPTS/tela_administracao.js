@@ -47,3 +47,19 @@ function searchData()
     var data = document.getElementById('pro_data').value;
     location.href = 'tela_administracao.php?pesquisar=' + data;
 }
+
+
+function validarFormulario(event) {
+    var senhaInput = document.getElementsByName('senha')[0];
+    var senha = senhaInput.value;
+
+    var senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$/;
+
+    
+    if (senhaRegex.test(senha) == false) {
+        event.preventDefault(); // Impede o envio do formulário se a senha for inválida
+        alert("A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.");
+    }
+}
+
+

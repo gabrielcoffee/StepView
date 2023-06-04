@@ -46,7 +46,7 @@
                         </fieldset>
                     </div>
                     <div class="botoesForm">
-                        <button>Adicionar</button>
+                        <button onclick="validarFormulario(event)">Adicionar</button>
                         
                     </div>
 
