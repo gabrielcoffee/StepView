@@ -2,7 +2,7 @@
 
 body{
     margin: 0;
-    background-image: linear-gradient(to right,#E1E6FA,#ABC8E2, #183152 );
+    background-color: #4567FF;
     border: 0;
     box-sizing: border-box;
     padding: 0;
@@ -33,7 +33,7 @@ body{
 
 .container {
     /*Estou alterando a cor do background*/
-    background: #c5cce9;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 
     /*Aqui estou falando que o tamanho desse elemento será 70vw, 70 de viewport e de vh*/
     width: 70vw;

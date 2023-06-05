@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 body{
-    padding: 0;
-    margin: 0;
+
 
     overflow-y:hidden;
     overflow-x:hidden;
 
+    padding: 0;
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
     font-family: 'Roboto Slab', serif;
 
 }
@@ -15,7 +17,7 @@ body{
 {
     width: 100vw;
     height: 100vh;
-    background-color: #E1E6FA;
+    background-color: #4567FF;
 
     display: grid;
     grid-template-columns: 2vw 98vw;
@@ -31,7 +33,7 @@ body{
 
 header
 {
-    background-color: #E1E6FA;
+    background-color: #ffffff;
     grid-area: header;
     display:flex;
     align-items: center;
@@ -55,7 +57,7 @@ header
 .barra_de_pesquisa > input {
     outline: 0;
     border: 0;
-    background-color: #E1E6FA;
+    background-color: #ffffff;
     width: 0;
     margin: 0;
     padding: 0;
@@ -64,7 +66,7 @@ header
 
 .loopa
 {
-    background-color: #E1E6FA;
+    background-color: #ffffff;
     width: 4vw;
     height: 2vw;
     border-radius: 50%;
@@ -96,7 +98,7 @@ header
 
 nav
 {
-    background-color: #ffffff;
+    background-color: #4567FF;
     grid-area: nav;
     display: flex;
     border-radius: 15px;
@@ -133,7 +135,7 @@ nav
 
 main
 {
-    background-color: #E1E6FA;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
     grid-area: main;
     
     border-radius: 2%;
@@ -164,6 +166,18 @@ main > div > h3{
     font-size: 1vw;
 }
 
+.card
+{
+    width: 12vw;
+    height: 12vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
 .zona_ativada
 {
     background: #C4D7ED;
@@ -179,7 +193,7 @@ main > div > h3{
 
 aside
 {
-    background-color: #183152;
+    background-color: #ffffff;
     grid-area: aside;
     border-top-right-radius: 10px;
     border-end-end-radius: 18px;
