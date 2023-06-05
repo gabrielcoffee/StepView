@@ -24,6 +24,26 @@ function abrirConfirmarDeletar(idProcesso)
     
 }
 
+function carregarPaginaCpf(cpf)
+{
+    location.href = "tela_administracao.php?cpf=" + cpf;
+}
+
+function abrirConfirmarDeletarFunc(cpf, funcao)
+{
+    alert(cpf);
+    alert(funcao);
+
+    if (window.confirm("Realmente deseja deletar funcionário?")) {
+        location.href = "PHPdeletar_funcionario.php?cpf=" + cpf + "&funcao=" + funcao;
+    }
+}
+
+function recarregarPagina()
+{
+    location.href = "tela_administracao.php";
+}
+
 /*
 function animarDiv() {
     var div = document.querySelector(".containerMainEsquerda");

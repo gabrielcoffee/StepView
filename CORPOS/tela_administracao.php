@@ -8,8 +8,6 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
     header("Location: ../index.html");
 }
 
-exit();
-
 ?>
 
 <!DOCTYPE html>
@@ -145,22 +143,10 @@ exit();
                 // CÓDIGO PHP 
                 include_once "PHPconfig.php";
 
-                // Código para Processos em certa data
-                if (isset($_GET['pesquisar'])) {
-                    $data = $_GET['pesquisar'];
-
-                    $sql = "SELECT pro.idProcesso, pro.tipoProcesso, pro.descricao, pro.data_marcada, cli.nome 
-                    FROM processo as pro, cliente as cli
-                    WHERE cli.cpf = pro.fk_Cliente_cpf AND pro.data_marcada = '$data';";
-                }
-                else
-                // Código para todos os Processos
-                {
-                    $sql = "SELECT pro.idProcesso, pro.tipoProcesso, pro.descricao, pro.data_marcada, cli.nome 
-                    FROM processo as pro, cliente as cli
-                    WHERE cli.cpf = pro.fk_Cliente_cpf;";
-                }
-
+                $sql = "SELECT pro.idProcesso, pro.tipoProcesso, pro.descricao, pro.data_marcada, cli.nome 
+                FROM processo as pro, cliente as cli
+                WHERE cli.cpf = pro.fk_Cliente_cpf;";
+                
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
 
@@ -203,7 +189,7 @@ exit();
                     <td class="tituloFuncionarioTabela">CPF</td>
                     <td class="tituloFuncionarioTabela">Nome</td>
                     <td class="tituloFuncionarioTabela">Função</td>
-                    <td class="tituloFuncionarioTabela" >Selecionar</td>
+                    <td class="tituloFuncionarioTabela">Selecionar</td>
                 </tr>
 
                 <?php
@@ -217,7 +203,7 @@ exit();
 
 
                 // Código para Odontologista
-                $sql = "SELECT odo.fk_Funcionario_cpf, odo.nome 
+                $sql = "SELECT odo.fk_Funcionario_cpf, odo.nome
                 FROM odontologista as odo";
 
                 // Faz o query (consulta)
@@ -230,19 +216,18 @@ exit();
                     // Pega informações do 
                     $cpf = $funcionario["fk_Funcionario_cpf"];
                     $nome = $funcionario["nome"];
-                    $funcao = "Odontologista";
+                    $funcao = "odontologista";
                     
                     // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
                     {
                         echo "<tr>\n";
-                        echo "<form action='PHPeditar_cliente.php' method='POST'>";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."></td>\n";
+                        echo "<form action='PHPeditar_funcionario.php' method='POST'>";
+                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."><input type='hidden' name='funcao' value=".$funcao."></td>\n";
                         echo "<td class='itemFuncionarioTabela'><input type='text' name='nome' value=".$nome."></td>\n";
+                        echo "<td class='itemFuncionarioTabela'><input type='text' name='funcao' value=".$funcao."></td>\n";
                         
                         echo "</td>\n";
-
-                        
 
                         echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
                         echo "</form>";
@@ -250,18 +235,17 @@ exit();
                     }
                     else
                     {
-                    echo "<tr>\n";
-                    echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
-                    echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
-                    echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
-                    echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
-                    echo "</tr>";
+                        echo "<tr>\n";
+                        echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
+                        echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                        echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
+                        echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletarFunc(".$cpf.",".$funcao.");'>Deletar</button></td>";
+                        echo "</tr>";
                     }
-                    
                 }
 
                 // Código Para Secretária
-                $sql = "SELECT sec.fk_Funcionario_cpf, sec.nome  
+                $sql = "SELECT sec.fk_Funcionario_cpf, sec.nome
                 FROM secretaria as sec";
 
                 // Faz o query (consulta)
@@ -274,19 +258,18 @@ exit();
                     // Pega informações do 
                     $cpf = $funcionario["fk_Funcionario_cpf"];
                     $nome = $funcionario["nome"];
-                    $funcao = "Secretária";
+                    $funcao = "secretaria";
                     
                     // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
                     if (isset($_GET['cpf']) && $cpf == $cpfeditar)
                     {
                         echo "<tr>\n";
-                        echo "<form action='PHPeditar_cliente.php' method='POST'>";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."></td>\n";
+                        echo "<form action='PHPeditar_funcionario.php' method='POST'>";
+                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."><input type='hidden' name='funcao' value=".$funcao."></td>\n";
                         echo "<td class='itemFuncionarioTabela'><input type='text' name='nome' value=".$nome."></td>\n";
+                        echo "<td class='itemFuncionarioTabela'><input type='text' name='funcao' value=".$funcao."></td>\n";
                         
                         echo "</td>\n";
-
-                        
 
                         echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
                         echo "</form>";
@@ -294,14 +277,13 @@ exit();
                     }
                     else
                     {
-                    echo "<tr>\n";
-                    echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
-                    echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
-                    echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
-                    echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
-                    echo "</tr>";
+                        echo "<tr>\n";
+                        echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
+                        echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                        echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
+                        echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletarFunc(".$cpf.",".$funcao.");'>Deletar</button></td>";
+                        echo "</tr>";
                     }
-                    
                 }
                 // FIM DO CÓDIGO PHP
                 ?>

@@ -8,8 +8,6 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -79,36 +77,35 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
         <main>
             <div class="barraDePesquisa">
             <?php
-                // CÓDIGO PHP 
-                include_once "PHPconfig.php";
+                // // CÓDIGO PHP 
+                // include_once "PHPconfig.php";
 
-                // Código para Processos em certa data
-                if (isset($_GET['pesquisar'])) {
-                    $data = $_GET['pesquisar'];
+                // // Código para Processos em certa data
+                // if (isset($_GET['pesquisar'])) {
+                //     $data = $_GET['pesquisar'];
 
-                    $sql = "SELECT * 
-                    FROM cliente    
-                    WHERE nome LIKE '%$data%';";
+                //     $sql = "SELECT * 
+                //     FROM cliente    
+                //     WHERE nome LIKE '%$data%';";
 
-
-                }
-                else
-                // Código para todos os Processos
-                {
-                    $sql = "SELECT * 
-                    FROM cliente 
-                    WHERE nome LIKE '%$data%';";
-                }
+                // }
+                // else
+                // // Código para todos os Processos
+                // {
+                //     $sql = "SELECT * 
+                //     FROM cliente 
+                //     WHERE nome LIKE '%$data%';";
+                // }
 
                 
-                // Faz o query (consulta)
-                $result = $conn->query($sql);
+                // // Faz o query (consulta)
+                // $result = $conn->query($sql);
 
-                $processo = $result->fetch_assoc();
+                // $processo = $result->fetch_assoc();
 
-                    $processo["nome"];
+                // $processo["nome"];
 
-                echo $nome;
+                //echo $nome;
 
 
                 ?>

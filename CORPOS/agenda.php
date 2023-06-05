@@ -100,58 +100,60 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
             
                 
                 <table class="tabelaComentarios">
-                    
-                    <tr>
-                        <th>Processo</th>
-                        <th>Descrição</th>
-                        <th>Data</th>
-                        <th>Nome</th>
-                        <th>Selecione</th>
-                    </tr>
-                    <?php 
+                
+
+                <tr>
+                    <th class="tituloDataTabela">Cliente</th>
+                    <th class="tituloDataTabela">Tipo</th>
+                    <th class="tituloDataTabela">Descricao</th>
+                    <th class="tituloDataTabela">Data</th>
+                    <th class="tituloDataTabela">Selecionar</th>
+                </tr>
+
+                <?php
+                // CÓDIGO PHP 
                 include_once "PHPconfig.php";
 
-                $cpf = $_GET["CPF"];
+                // Código para Processos em certa data
+                if (isset($_GET['pesquisar'])) {
+                    $data = $_GET['pesquisar'];
 
-                $sql = "SELECT * FROM processo WHERE fk_Cliente_cpf = '$cpf';";
-                $result = $conn -> query($sql);
-                
-                while($processo = $result->fetch_assoc()){
-                    $tipoProcesso = $processo["tipoProcesso"];
-                    $descricao   = $processo["descricao"];
-                    $data = $processo["data_marcada"];
-                    $id = $processo["idProcesso"];
-                    $nome = $processo['nome'];
-                    
-
-                    echo "<tr>";
-                    echo "<form action='PHPcomentar_deletar.php' method='POST'>";
-                    echo "<input type='hidden' value='$cpf' name='cpf'>";
-                    echo "<input type='hidden' value='$id'  name='idproc'>";
-                    echo "<td><label class='labelProcesso'>$tipoProcesso</label><input class='inputProcesso' type='hidden' value='$tipoProcesso' name='tipoProcesso' placeholder='Tipo do processo'></td>";
-                   
-                    echo "<td><label class='labelProcesso'>$descricao</label></td>";
-                    
-                    echo "<td><label class='labelProcesso'>$data</label><input class='inputData' type='hidden' value='$data' name='data'></td>";
-
-                    echo "<td><label class='labelProcesso'>$nome</label><input class='inputArea' type='hidden' value='$nome' name='descricao' placeholder=''></td>";
-                   
-                   
-                   
-                    echo "<td><button class='botaoExcluir' type='submit'>Excluir</button></td>";
-                    echo "</form>";
-                    echo "</tr>";
-                  
-                    
+                    $sql = "SELECT pro.idProcesso, pro.tipoProcesso, pro.descricao, pro.data_marcada, cli.nome 
+                    FROM processo as pro, cliente as cli
+                    WHERE cli.cpf = pro.fk_Cliente_cpf AND pro.data_marcada = '$data';";
                 }
-                ?>
-                </table>
+                else
+                // Código para todos os Processos
+                {
+                    $sql = "SELECT pro.idProcesso, pro.tipoProcesso, pro.descricao, pro.data_marcada, cli.nome 
+                    FROM processo as pro, cliente as cli
+                    WHERE cli.cpf = pro.fk_Cliente_cpf;";
+                }
 
+                // Faz o query (consulta)
+                $result = $conn->query($sql);
+
+                while($processo = $result->fetch_assoc())
+                {
+                    // Pega informações do Processo
+                    $id_pro = $processo["idProcesso"];
+                    $tipo = $processo["tipoProcesso"];
+                    $data = $processo["data_marcada"];
+                    $desc = $processo["descricao"];
+                    $cliente = $processo["nome"];
+
+                    echo "<tr>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$cliente."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$tipo."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$desc."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$data."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletar(".$id_pro.");'>Deletar</button></td>";
+                    echo "</tr>";
+                }
                 
-
-
+                ?>
+            </table>
             </div>
-
         </div>
     </div>
 </body>
