@@ -29,13 +29,10 @@ function carregarPaginaCpf(cpf)
     location.href = "tela_administracao.php?cpf=" + cpf;
 }
 
-function abrirConfirmarDeletarFunc(cpf, funcao)
+function abrirConfirmarDeletarFunc(cpf)
 {
-    alert(cpf);
-    alert(funcao);
-
-    if (window.confirm("Realmente deseja deletar funcionário?")) {
-        location.href = "PHPdeletar_funcionario.php?cpf=" + cpf + "&funcao=" + funcao;
+    if (window.confirm("Realmente deseja deletar este funcionário(a)?")) {
+        location.href = "PHPdeletar_funcionario.php?cpf=" + cpf;
     }
 }
 

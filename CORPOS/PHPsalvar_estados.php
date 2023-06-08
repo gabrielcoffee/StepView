@@ -5,7 +5,7 @@
 include_once "PHPconfig.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $cpf = $_POST['cpf'];
+    $cpf = strval($_POST['cpf']);
     $estado = $_POST['estado'];
     if ($estado == "Agendamento solicitado") $estado = 1;
     else if ($estado == "Pagamento realizado") $estado = 2;

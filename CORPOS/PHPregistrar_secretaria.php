@@ -1,13 +1,13 @@
 <?php
 include_once "PHPconfig.php";
 
-$cpf = $_POST["cpf"];
+$cpf = strval($_POST['cpf']);
 $idSecretaria = rand(1,100);
 $senha = $_POST["senha"];
 $nome = $_POST["nome"];
 
 
-$query = "INSERT INTO secretaria(fk_Funcionario_cpf, idSecretaria, senha, nome)
+$query = "INSERT INTO secretaria(cpf, idSecretaria, senha, nome)
  VALUES ('$cpf', '$idSecretaria', '$senha', '$nome');";
 
 $result = $conn->query($query);

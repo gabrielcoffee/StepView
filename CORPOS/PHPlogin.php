@@ -29,17 +29,42 @@ else
     <?php
 }
 
-// Login para funcionarios (Odontologista e Secretária)
-$sql = "SELECT * FROM funcionario WHERE senha = '$senha' AND (cpf = '$cpf_ou_nome' OR nome = '$cpf_ou_nome');";
+// Login para Secretárias
+$sql = "SELECT * FROM secretaria WHERE senha = '$senha' AND (cpf = '$cpf_ou_nome' OR nome = '$cpf_ou_nome');";
 $result = $conn->query($sql);
 
 if ($row = $result->fetch_assoc())
 {
     session_start();
-    $_SESSION["logged"] = "funcionario";
+    $_SESSION["logged"] = "secretaria";
     ?>
     <script>
-        alert("Funcionario logado com sucesso");
+        alert("LOGADO COMO SECRETÁRIA");
+        location.href = "visualizar_clientes.php";
+    </script>
+    <?php
+}
+else
+{
+    ?>
+    <script>
+        alert("Funcionario não encontrado");
+        location.href = "../";
+    </script>
+    <?php
+}
+
+// Login para Odontólogistas
+$sql = "SELECT * FROM odontologista WHERE senha = '$senha' AND (cpf = '$cpf_ou_nome' OR nome = '$cpf_ou_nome');";
+$result = $conn->query($sql);
+
+if ($row = $result->fetch_assoc())
+{
+    session_start();
+    $_SESSION["logged"] = "odontologista";
+    ?>
+    <script>
+        alert("LOGADO COMO ODONTOLOGISTA");
         location.href = "visualizar_clientes.php";
     </script>
     <?php

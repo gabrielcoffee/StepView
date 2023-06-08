@@ -198,13 +198,12 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
 
                 // Pega cpf do cliente que foi clicado em editar pelo GET
                 if (isset($_GET['cpf'])) {
-                    $cpfeditar = $_GET['cpf'];
+                    $cpfeditar = strval($_GET['cpf']);;
                 }
 
 
                 // Código para Odontologista
-                $sql = "SELECT odo.fk_Funcionario_cpf, odo.nome
-                FROM odontologista as odo";
+                $sql = "SELECT cpf, nome FROM odontologista";
 
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
@@ -214,39 +213,20 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                 while($funcionario = $result->fetch_assoc())
                 {
                     // Pega informações do 
-                    $cpf = $funcionario["fk_Funcionario_cpf"];
+                    $cpf = $funcionario["cpf"];
                     $nome = $funcionario["nome"];
                     $funcao = "odontologista";
-                    
-                    // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
-                    if (isset($_GET['cpf']) && $cpf == $cpfeditar)
-                    {
-                        echo "<tr>\n";
-                        echo "<form action='PHPeditar_funcionario.php' method='POST'>";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."><input type='hidden' name='funcao' value=".$funcao."></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><input type='text' name='nome' value=".$nome."></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><input type='text' name='funcao' value=".$funcao."></td>\n";
-                        
-                        echo "</td>\n";
-
-                        echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
-                        echo "</form>";
-                        echo "</tr>";
-                    }
-                    else
-                    {
-                        echo "<tr>\n";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
-                        echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
-                        echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletarFunc(".$cpf.",".$funcao.");'>Deletar</button></td>";
-                        echo "</tr>";
-                    }
+                
+                    echo "<tr>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletarFunc(\"".$cpf."\");'>Deletar</button></td>";
+                    echo "</tr>";
                 }
 
                 // Código Para Secretária
-                $sql = "SELECT sec.fk_Funcionario_cpf, sec.nome
-                FROM secretaria as sec";
+                $sql = "SELECT cpf, nome FROM secretaria";
 
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
@@ -256,34 +236,17 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                 while($funcionario = $result->fetch_assoc())
                 {
                     // Pega informações do 
-                    $cpf = $funcionario["fk_Funcionario_cpf"];
+                    $cpf = $funcionario["cpf"];
                     $nome = $funcionario["nome"];
                     $funcao = "secretaria";
                     
-                    // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
-                    if (isset($_GET['cpf']) && $cpf == $cpfeditar)
-                    {
-                        echo "<tr>\n";
-                        echo "<form action='PHPeditar_funcionario.php' method='POST'>";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."<input type='hidden' name='cpf' value=".$cpf."><input type='hidden' name='funcao' value=".$funcao."></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><input type='text' name='nome' value=".$nome."></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><input type='text' name='funcao' value=".$funcao."></td>\n";
-                        
-                        echo "</td>\n";
-
-                        echo "<td class='checkBox'> <button type='submit'>Confirmar</button> <button type='button' form='deletar' onclick='recarregarPagina()'>Cancelar</button> </td>";
-                        echo "</form>";
-                        echo "</tr>";
-                    }
-                    else
-                    {
-                        echo "<tr>\n";
-                        echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
-                        echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
-                        echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
-                        echo "<td class='itemFuncionarioTabela'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletarFunc(".$cpf.",".$funcao.");'>Deletar</button></td>";
-                        echo "</tr>";
-                    }
+                    echo "<tr>\n";
+                    echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletarFunc(\"".$cpf."\");'>Deletar</button></td>";
+                    echo "</tr>";
+                    
                 }
                 // FIM DO CÓDIGO PHP
                 ?>

@@ -28,22 +28,22 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
             </div>
             <div class="formRegistrar">
                 <legend class="legendaBotao"><button onclick="sairModal()" class="botaoSair">X</button></legend>
-                <form>
+                <form action="PHPregistrar_cliente.php" method="POST">
                     <div class="inputForm">
-                        <input type="text" value="" name="cpf" placeholder="CPF">
+                        <input type="text"name="cpf" placeholder="CPF" pattern="[0-9]{11}" required>
                     </div>
                     <div class="inputForm">
-                        <input type="text" value="" name="nome" placeholder="Nome">
+                        <input type="text" name="nome" placeholder="Nome" required>
                     </div>
                     <div class="inputForm">
-                        <input type="email" value="" name="email" placeholder="E-mail">
+                        <input type="email" name="email" placeholder="E-mail" required>
                     </div>
                     <div class="inputForm">
                         <label>Data de Nascimento</label>
-                        <input type="date" value="" name="data">
+                        <input type="date" name="nascimento" min="1900-01-01" max="2023-05-15" required>
                     </div>
                     <div class="inputForm">
-                        <input type="text" value="" name="telefone" placeholder="Telefone (99) 9 9999-9999">
+                        <input type="text" name="telefone" placeholder="Telefone (99) 9 9999-9999" pattern="[0-9]{8,11}" required>
                     </div>
                     <div class="inputForm">
                         <fieldset class="InputCheckbox">
@@ -57,7 +57,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                         </fieldset>
                     </div>
                     <div class="botoesForm">
-                        <button onclick="validarFormulario(event)">Adicionar</button>
+                        <button type="submit">Adicionar</button>
                         
                     </div>
 
@@ -135,7 +135,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     
                     // Pega cpf do cliente que foi clicado em editar pelo GET
                     if (isset($_GET['cpf'])) {
-                        $cpfeditar = $_GET['cpf'];
+                        $cpfeditar = strval($_GET['cpf']);
                     }
                     
                     

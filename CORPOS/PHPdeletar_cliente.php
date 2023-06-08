@@ -1,7 +1,7 @@
 <?php
 include_once "PHPconfig.php";
 
-$cpf = $_GET["cpf"];
+$cpf = strval($_GET['cpf']);
 
 $sql = "DELETE FROM cliente WHERE cpf = '$cpf';";
 $result = $conn->query($sql);

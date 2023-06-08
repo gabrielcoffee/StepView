@@ -1,7 +1,7 @@
 <?php
 include_once "PHPconfig.php";
 
-$cpf = $_POST["cpf"];
+$cpf = strval($_POST['cpf']);
 $nome = $_POST["nome"];
 $funcao = $_POST["funcao"];
 

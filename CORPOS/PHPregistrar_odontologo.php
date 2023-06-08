@@ -1,13 +1,13 @@
 <?php
 include_once "PHPconfig.php";
 
-$cpf = $_POST["cpf"];
+$cpf = strval($_POST['cpf']);
 $crm = $_POST["crm"];
 $senha = $_POST["senha"];
 $nome = $_POST["nome"];
 
 
-$query = "INSERT INTO odontologista(fk_Funcionario_cpf, crm, senha, nome)
+$query = "INSERT INTO odontologista(cpf, crm, senha, nome)
  VALUES ('$cpf', '$crm', '$senha', '$nome');";
 
 $result = $conn->query($query);
