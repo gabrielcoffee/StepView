@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jun-2023 às 20:57
+-- Tempo de geração: 08-Jun-2023 às 21:18
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -62,7 +62,7 @@ CREATE TABLE `cliente` (
 
 INSERT INTO `cliente` (`cpf`, `nome`, `nascimento`, `telefone`, `email`, `sexo`, `estado`) VALUES
 ('06188144183', 'gabriel', '2003-09-18', '66996854445', 'gab@gmail.com', 'M', 1),
-('12312312312', 'nicolas', '2000-09-18', '41999999999', 'nic@gmail.com', 'M', 1);
+('12312312312', 'nicolas', '2000-09-18', '41999999999', 'nic@gmail.com', 'M', 2);
 
 -- --------------------------------------------------------
 
@@ -105,7 +105,8 @@ CREATE TABLE `processo` (
 INSERT INTO `processo` (`idProcesso`, `tipoProcesso`, `descricao`, `data_marcada`, `fk_Cliente_cpf`) VALUES
 (1, 'remoção dente', 'remove os dentes tortos', '2023-09-18', '06188144183'),
 (2, 'cárie', 'remove cárie', '2023-02-10', '06188144183'),
-(3, 'aplicação', 'nova aplicação', '2009-07-27', '12312312312');
+(3, 'aplicação', 'nova aplicação', '2009-07-27', '12312312312'),
+(4, 'novo', 'vnooasdffdas', '2023-06-15', '06188144183');
 
 -- --------------------------------------------------------
 
@@ -156,7 +157,7 @@ ALTER TABLE `processo`
 -- AUTO_INCREMENT de tabela `processo`
 --
 ALTER TABLE `processo`
-  MODIFY `idProcesso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `idProcesso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

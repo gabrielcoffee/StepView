@@ -47,7 +47,7 @@ if ($row = $result->fetch_assoc())
     ?>
     <script>
         alert("LOGADO COMO ODONTOLOGISTA");
-        location.href = "agenda.php";
+        location.href = "visualizar_clientes.php";
     </script>
     <?php
 }

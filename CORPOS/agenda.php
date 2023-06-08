@@ -8,6 +8,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
+// Se não tiver cpf no get, voltar
+if (!isset($_GET['CPF'])) {
+    Header("Location: visualizar_clientes.php");
+}
+
 $login = $_SESSION["logged"];
 ?>
 
