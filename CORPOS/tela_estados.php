@@ -8,6 +8,8 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
+$login = $_SESSION["logged"];
+
 ?>
 
 <!DOCTYPE html>
@@ -60,8 +62,15 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                     {
                         $cpf        = $cliente["cpf"];
                         $nome       = $cliente["nome"];
-
-                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        
+                        if ($login == "odontologista")
+                        {
+                            echo "<div class='card'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
+                        else
+                        {
+                            echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
                     }
                     ?>
                     
@@ -83,7 +92,14 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                         $cpf        = $cliente["cpf"];
                         $nome       = $cliente["nome"];
 
-                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        if ($login == "odontologista")
+                        {
+                            echo "<div class='card'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
+                        else
+                        {
+                            echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
                     }
 
                     ?>
@@ -106,7 +122,14 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                         $cpf        = $cliente["cpf"];
                         $nome       = $cliente["nome"];
 
-                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        if ($login == "odontologista")
+                        {
+                            echo "<div class='card'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
+                        else
+                        {
+                            echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
                     }
 
                     ?>
@@ -128,7 +151,14 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                         $cpf        = $cliente["cpf"];
                         $nome       = $cliente["nome"];
 
-                        echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        if ($login == "odontologista")
+                        {
+                            echo "<div class='card'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
+                        else
+                        {
+                            echo "<div class='card' draggable='true'><h3>".$cpf."</h3><h2>".$nome."</h2></div>";
+                        }
                     }
 
                     ?>

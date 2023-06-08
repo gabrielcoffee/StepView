@@ -8,7 +8,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
-
+$login = $_SESSION["logged"];
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +99,15 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                 echo "</div>";
                 echo "<div class='botoesForm'>";
                 echo "<div class='botao'>";
-                echo "<button>Adicionar</button>";
+                if ($login == "secretaria")
+                {
+                    echo "<h2>RESTRITO</h2>";
+                }
+                else
+                {
+                    echo "<button>Adicionar</button>";
+                }
+
                 echo "</div>";
             
                 echo "</div>";
@@ -140,12 +148,23 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                     $desc = $processo["descricao"];
                     $cliente = $processo["nome"];
 
+                  
+
                     echo "<tr>\n";
                     echo "<td class='itemFuncionarioTabela'>".$cliente."</td>\n";
                     echo "<td class='itemFuncionarioTabela'>".$tipo."</td>\n";
                     echo "<td class='itemFuncionarioTabela'>".$desc."</td>\n";
                     echo "<td class='itemFuncionarioTabela'>".$data."</td>\n";
-                    echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletar(".$id_pro.");'>Deletar</button></td>";
+
+                    // Só não mostra opções para secretária
+                    if ($login == "secretaria")
+                    {
+                        echo "<td class='itemFuncionarioTabela'><button>RESTRITO</button></td>";
+                    }
+                    else
+                    {
+                        echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletar(".$id_pro.");'>Deletar</button></td>";
+                    }
                     echo "</tr>";
                 }
                 

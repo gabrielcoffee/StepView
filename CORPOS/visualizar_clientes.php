@@ -8,6 +8,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
     header("Location: ../index.html");
 }
 
+$login = $_SESSION["logged"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -167,7 +168,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                             $sexo = "Outro";
                         
                         // Poe na table de html os dados do cliente selecionado como input para mudanças (tudo dentro de um form para enviar ao phpeditar)
-                        if (isset($_GET['cpf']) && $cpf == $cpfeditar)
+                        if (isset($_GET['cpf']) && $cpf == $cpfeditar && $login != "odontologista")
                         {
                             echo "<tr>\n";
                             echo "<form action='PHPeditar_cliente.php' method='POST'>";
@@ -206,14 +207,23 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false)
                         else
                         {
                             echo "<tr>\n";
-                        echo "<td class='td_principal'>".$cpf."</td>\n";
-                        echo "<td class='td_principal'><a href='agenda.php?CPF=".$cpf."'>".$nome."</a></td>\n";
-                        echo "<td class='td_principal'>".$email."</td>\n";
-                        echo "<td class='td_principal'>".$telefone."</td>\n";
-                        echo "<td class='td_principal'>".$sexo."</td>\n";
-                        echo "<td class='td_principal'>".$nascimento."</td>\n";
-                        echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
-                        echo "</tr>";
+                            echo "<td class='td_principal'>".$cpf."</td>\n";
+                            echo "<td class='td_principal'><a href='agenda.php?CPF=".$cpf."'>".$nome."</a></td>\n";
+                            echo "<td class='td_principal'>".$email."</td>\n";
+                            echo "<td class='td_principal'>".$telefone."</td>\n";
+                            echo "<td class='td_principal'>".$sexo."</td>\n";
+                            echo "<td class='td_principal'>".$nascimento."</td>\n";
+
+                            if ($login == "odontologista")
+                            {
+                                echo "<td class='checkBox'> <button>RESTRITO</button> <button>RESTRITO</button></td>";
+                            }
+                            else
+                            {
+                                echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
+
+                            }
+                            echo "</tr>";
                         }
                         
                     }

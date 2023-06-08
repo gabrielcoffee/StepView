@@ -11,34 +11,31 @@ if ($result === TRUE)
 {
     ?>
     <script>
-        alert("Odontologista deletado com sucesso");
+        alert("Odontologista deletado");
         location.href = "tela_administracao.php";
     </script>
     <?php
 }
-else
-{
-    // DELETA SECRETARIAS
-    $sql = "DELETE FROM secretaria WHERE cpf = '$cpf';";
-    $result = $conn->query($sql);
 
-    if ($result === TRUE)
-    {
-        ?>
-        <script>
-            alert("Secretaria deletada com sucesso");
-            location.href = "tela_administracao.php";
-        </script>
-        <?php
-    }
-    else
-    {
-        ?>
-        <script>
-            alert("Funcionaria não encontrada");
-            location.href = "tela_administracao.php";
-        </script>
-        <?php
-    }
+// DELETA SECRETARIAS
+$sql = "DELETE FROM secretaria WHERE cpf = '$cpf';";
+$result = $conn->query($sql);
+
+if ($result === TRUE)
+{
+    ?>
+    <script>
+        alert("Secretária deletada");
+        location.href = "tela_administracao.php";
+    </script>
+    <?php
 }
+
+// CASO NÃO DELETOU NENHUM
+?>
+<script>
+    alert("Ocorreu um erro na deleção");
+    location.href = "tela_administracao.php";
+</script>
+<?php
 ?>

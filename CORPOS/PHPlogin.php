@@ -15,16 +15,7 @@ if ($row = $result->fetch_assoc())
     ?>
     <script>
         alert("LOGADO COMO ADMINISTRADOR");
-        location.href = "visualizar_clientes.php";
-    </script>
-    <?php
-}
-else
-{
-    ?>
-    <script>
-        alert("Funcionario não encontrado");
-        location.href = "../";
+        location.href = "tela_administracao.php";
     </script>
     <?php
 }
@@ -44,15 +35,6 @@ if ($row = $result->fetch_assoc())
     </script>
     <?php
 }
-else
-{
-    ?>
-    <script>
-        alert("Funcionario não encontrado");
-        location.href = "../";
-    </script>
-    <?php
-}
 
 // Login para Odontólogistas
 $sql = "SELECT * FROM odontologista WHERE senha = '$senha' AND (cpf = '$cpf_ou_nome' OR nome = '$cpf_ou_nome');";
@@ -65,17 +47,17 @@ if ($row = $result->fetch_assoc())
     ?>
     <script>
         alert("LOGADO COMO ODONTOLOGISTA");
-        location.href = "visualizar_clientes.php";
+        location.href = "agenda.php";
     </script>
     <?php
 }
-else
-{
-    ?>
-    <script>
-        alert("Funcionario não encontrado");
-        location.href = "../";
-    </script>
-    <?php
-}
+
+// não encontrou o login
+?>
+<script>
+    alert("Funcionario não encontrado");
+    location.href = "../";
+</script>
+<?php
+
 ?>
