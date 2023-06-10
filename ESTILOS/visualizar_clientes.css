@@ -406,3 +406,8 @@ fieldset
     border: 2px solid #0CC0DF;
     border-radius: 20px;
 }
+
+
+.destaque {
+    background-color: yellow;
+  }

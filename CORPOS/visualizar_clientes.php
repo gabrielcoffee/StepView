@@ -20,6 +20,7 @@ $login = $_SESSION["logged"];
     <link rel="stylesheet" href="../ESTILOS/visualizar_clientes.css">
 </head>
 <body>
+
     <div class="telaModal">
         <div class="containerModal">
             
@@ -77,39 +78,6 @@ $login = $_SESSION["logged"];
         </header>
         <main>
             <div class="barraDePesquisa">
-            <?php
-                // // CÓDIGO PHP 
-                // include_once "PHPconfig.php";
-
-                // // Código para Processos em certa data
-                // if (isset($_GET['pesquisar'])) {
-                //     $data = $_GET['pesquisar'];
-
-                //     $sql = "SELECT * 
-                //     FROM cliente    
-                //     WHERE nome LIKE '%$data%';";
-
-                // }
-                // else
-                // // Código para todos os Processos
-                // {
-                //     $sql = "SELECT * 
-                //     FROM cliente 
-                //     WHERE nome LIKE '%$data%';";
-                // }
-
-                
-                // // Faz o query (consulta)
-                // $result = $conn->query($sql);
-
-                // $processo = $result->fetch_assoc();
-
-                // $processo["nome"];
-
-                //echo $nome;
-
-
-                ?>
                 <form class="formPesquisar">
                     <input type="text" name="pesquisar" value="" placeholder="Pesquisar" class="inputPesquisa">
                     <button id="pesquisar" onclick="searchData()"><svg fill="#000000" width="1vw" height="2vh" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

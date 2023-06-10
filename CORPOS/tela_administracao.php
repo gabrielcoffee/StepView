@@ -45,10 +45,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                         </div>
                      
                         <div>
-                            <input name="" type="password" placeholder="Senha">
+                            <input name="" type="password" placeholder="Senha" id="senha2">
                         </div>
                         <div>
-                            <input name="senha" type="password" placeholder="Senha">
+                            <input name="senha" type="password" placeholder="Senha" id="senha2">
+                            <span id="error" class="error"></span><br>
                         </div>
                         <div class="botoes">
                             <button onclick="validarFormulario(event)" type="submit">Registrar</button>
@@ -77,10 +78,11 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                         </div>
                         <div>
                             <input name="senha" type="password" placeholder="Senha">
+                            <span id="error" class="error"></span><br>
                         </div>
                         <div class="botoes">
-                                                                                        
-                            <button onclick="validarFormulario(event)">Registrar</button>
+
+                        <button onclick="validarFormulario(event)" type="submit">Registrar</button>
 
                         </div>
                     </form>
@@ -96,8 +98,10 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
             <div class="containerAside">
                 <div class="asideCima">
                     <button onclick="abrirModal()">Cadastrar Funcionário</button>
-                    <button>Tela Estados</button>
-                    <button>Sair</button>
+                    <button onclick="irTela()">Tela Estados</button>
+                    <form action="PHPlogou.php" method="post">
+                    <input type="submit" name="logout" value="Sair">
+                     </form>
 
 
                 </div>

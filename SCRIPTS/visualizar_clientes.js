@@ -29,11 +29,55 @@ function sairModal()
     tela.classList.remove("ola");
     telaDeletar.classList.remove("ola");
 }
-function searchData()
+/*function searchData()
 {
     var search = document.getElementById('pesquisar');
     window.location = 'tela_administracao.php?search='+search.value;
+}*/
+
+
+const filterElement = document.querySelector('.inputPesquisa')
+
+const items = document.querySelectorAll("table td")
+
+filterElement.addEventListener('input', filterItems)
+
+function filterItems()
+{
+    if(filterElement.value != '')
+    {
+        for(let item of items)
+        {
+            let filterText = filterElement.value
+
+            let itemText = item.textContent
+
+            if(!itemText.includes(filterText))
+            {
+                item.style.background = "white"
+            }
+            else
+            {
+                item.style.background = "pink"
+            }
+          
+        }
+
+    }
+    else
+    {
+        for (let item of items)
+        {
+            item.style.background = "pink"
+        }
+    }
 }
 
 
-console.log(tela);
+
+
+
+console.log(items);
+
+console.log(filterElement);
+
