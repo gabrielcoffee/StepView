@@ -85,29 +85,31 @@ senhaInput.addEventListener('keyup', validarSenha);
 // Função de validação de senha
 function validarSenha() {
     const senha = senhaInput.value;
-    const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$/;
+    const senhaRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/;
 
     if (senhaRegex.test(senha) == false) {
     errorSpan.textContent = 'A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.';
     } else {
-    errorSpan.textContent = '';
+        errorSpan.textContent = "";
+        const password1Input = document.getElementById('senha1');
+        const password2Input = document.getElementById('senha2');
     }
 }
 
 // Função de validação do formulário
 function validarFormulario(event) {
     const senha = senhaInput.value;
-    const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+{};:,<.>])[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$/;
+    const senhaRegex = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}$/; 
 
     if (senhaRegex.test(senha) == false) {
     event.preventDefault(); // Impede o envio do formulário se a senha for inválida
-    alert('A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.');
+    errorSpan.textContent ='A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.';
+    } else {
+        const password1Input = document.getElementById('senha1');
+        const password2Input = document.getElementById('senha2');
+
     }
 }
-
-const password1Input = document.getElementById('senha1');
-const password2Input = document.getElementById('senha2');
-
 
 // Adiciona evento de escuta de digitação nos campos de senha
 password1Input.addEventListener('keyup', validatePassword);

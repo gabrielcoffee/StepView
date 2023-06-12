@@ -36,6 +36,9 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                     <form action="PHPregistrar_odontologo.php" method="POST">
                         <div>
                             <input name="nome" type="text" placeholder="Nome">
+                        </div>
+                        <div>
+                            <input name="especialidade" type="text" placeholder="especialidade">
                         </div>  
                         <div>
                             <input name="cpf" type="text" placeholder="Cpf">
@@ -45,7 +48,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                         </div>
                      
                         <div>
-                            <input name="senha" type="password" placeholder="Senha" id="senha2">
+                            <input name="senha" type="password" placeholder="Senha" id="senha1">
                         </div>
                         <div>
                             <input name="senha" type="password" placeholder="Senha" id="senha2">
@@ -193,6 +196,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                 <tr>
                     <td class="tituloFuncionarioTabela">CPF</td>
                     <td class="tituloFuncionarioTabela">Nome</td>
+                    <td class="tituloFuncionarioTabela">Especialidade</td>
                     <td class="tituloFuncionarioTabela">Função</td>
                     <td class="tituloFuncionarioTabela">Selecionar</td>
                 </tr>
@@ -208,7 +212,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
 
 
                 // Código para Odontologista
-                $sql = "SELECT cpf, nome FROM odontologista";
+                $sql = "SELECT cpf, nome, especialidade FROM odontologista";
 
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
@@ -221,17 +225,19 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                     $cpf = $funcionario["cpf"];
                     $nome = $funcionario["nome"];
                     $funcao = "odontologista";
+                    $especialidade = $funcionario["especialidade"];
                 
                     echo "<tr>\n";
                     echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
                     echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'><a>".$especialidade."</a></td>\n";
                     echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
                     echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletarFunc(\"".$cpf."\");'>Deletar</button></td>";
                     echo "</tr>";
                 }
 
                 // Código Para Secretária
-                $sql = "SELECT cpf, nome FROM secretaria";
+                $sql = "SELECT cpf ,nome FROM secretaria";
 
                 // Faz o query (consulta)
                 $result = $conn->query($sql);
@@ -248,6 +254,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                     echo "<tr>\n";
                     echo "<td class='itemFuncionarioTabela'>".$cpf."</td>\n";
                     echo "<td class='itemFuncionarioTabela'><a>".$nome."</a></td>\n";
+                    echo "<td class='itemFuncionarioTabela'></td>\n";
                     echo "<td class='itemFuncionarioTabela'><a>".$funcao."</a></td>\n";
                     echo "<td class='itemFuncionarioTabela'><button onclick='abrirConfirmarDeletarFunc(\"".$cpf."\");'>Deletar</button></td>";
                     echo "</tr>";

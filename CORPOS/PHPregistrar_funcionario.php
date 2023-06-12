@@ -3,10 +3,11 @@ include_once "PHPconfig.php";
 
 $cpf = strval($_POST['cpf']);
 $nome = $_POST["nome"];
+$nome = $_POST["especialidade"];
 $senha = $_POST["senha"];
 
-$query = "INSERT INTO funcionario (cpf, nome, senha)
- VALUES ('$cpf', '$nome', '$senha');";
+$query = "INSERT INTO funcionario (cpf, nome, senha, especialidade)
+ VALUES ('$cpf', '$nome', '$senha', '$especialidade');";
 
 $result = $conn->query($query);
 

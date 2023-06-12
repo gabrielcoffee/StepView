@@ -9,7 +9,7 @@ if ($funcao == "odontologista")
 {
     $query = "UPDATE odontologista
           SET  nome = '$nome', funcao = '$funcao'
-          WHERE cpf = '$cpf';";
+          WHERE cpf = '$cpf', especialidade = '$especialidade';";
     $result = $conn->query($query);
 }
 else if ($funcao == "secretaria")

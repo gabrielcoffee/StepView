@@ -16,7 +16,7 @@ if ($result === TRUE) {
     
     ?>
     <script>
-        alert("Odontologista cadastrado com sucesso!");
+        alert("Secretaria cadastrado com sucesso!");
         location.href = "tela_administracao.php";
     </script>
     <?php

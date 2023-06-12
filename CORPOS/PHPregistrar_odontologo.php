@@ -5,10 +5,11 @@ $cpf = strval($_POST['cpf']);
 $crm = $_POST["crm"];
 $senha = $_POST["senha"];
 $nome = $_POST["nome"];
+$especialidade = $_POST["especialidade"];
 
 
-$query = "INSERT INTO odontologista(cpf, crm, senha, nome)
- VALUES ('$cpf', '$crm', '$senha', '$nome');";
+$query = "INSERT INTO odontologista(cpf, crm, senha, nome, especialidade)
+ VALUES ('$cpf', '$crm', '$senha', '$nome', '$especialidade');";
 
 $result = $conn->query($query);
 
