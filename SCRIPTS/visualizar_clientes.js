@@ -74,7 +74,11 @@ function filterItems()
 }
 
 
+function telaEstado() 
+{
+    location.href = "tela_estados.php";
 
+}
 
 
 console.log(items);

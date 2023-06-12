@@ -25,7 +25,10 @@ body
     display: flex;
 }
 
-
+span
+{
+    font-size: 1vw
+}
 
 
 .botaoSair > button
@@ -37,6 +40,8 @@ body
     width: 3vw;
     height: 3vh;
     border-radius: 15px;
+    font-size: 1vw;
+
 }
 
 .containerForm
@@ -71,7 +76,7 @@ body
     align-items: center;
 }
 
-.formOdonto > h1
+.titulo > h1
 {
     font-size: 1.6vw;
 }
@@ -88,6 +93,8 @@ body
     width: 12vw;
     height: 3vh;
     border-radius: 15px;
+    font-size: 1vw;
+
     
 }
 
@@ -98,6 +105,8 @@ body
     border-radius: 15px;
     width: 10vw;
     height: 3vh;
+    font-size: 1vw;
+
 }
 
 /*----------------------------------SECRETARIA----------------*/
@@ -141,6 +150,8 @@ body
     width: 12vw;
     height: 3vh;
     border-radius: 15px;
+    font-size: 1vw;
+
     
 }
 
@@ -151,6 +162,8 @@ body
     border-radius: 15px;
     width: 10vw;
     height: 3vh;
+    font-size: 1vw;
+
 }
 
 
@@ -227,6 +240,21 @@ body
     
 }
 
+.containerAside:hover .asideCima > form > input
+{
+    width: 4.5vw;
+    font-size: 0.7vw;
+    
+}
+
+.asideCima > form > input:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+    
+}
+
+
 .asideCima > button:hover
 {
     transform: translateY(-5px);
@@ -280,6 +308,18 @@ body
     transition: 1s;
     
     border: 2px solid#0CC0DF;
+}
+
+.asideCima > form > input
+{
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 1.5vw;
+    height: 4vh;
+    font-size: 0;
+    transition: 1s;
+    
+    border: 2px solid#0CC0DF; 
 }
 
 
@@ -381,6 +421,7 @@ header
     display: flex;
     justify-content: center;
 
+    overflow: auto;
 
 
     border-bottom-left-radius: 20px;
@@ -430,6 +471,8 @@ header
 
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
+    overflow: auto;
 
     
 
@@ -526,9 +569,9 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
-
-    background-color: white;
+    background: linear-gradient(90deg, rgba(205,255,216,0.4) 0%, rgba(148,185,255,1) 35%);
 }
 
 .formPesquisarFuncionario > button

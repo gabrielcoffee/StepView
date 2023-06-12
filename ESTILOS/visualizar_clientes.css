@@ -215,6 +215,33 @@ td > button:hover
     
 }
 
+.containerAside:hover .asideCima > form > input
+{
+    width: 4.5vw;
+    font-size: 0.7vw;
+    
+}
+
+.asideCima > form > input:hover
+{
+    transform: translateY(-5px);
+    background-color: #0CC0DF;
+    
+}
+
+.asideCima > form > input
+{
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 1.5vw;
+    height: 4vh;
+    font-size: 0;
+    transition: 1s;
+    
+    border: 2px solid#0CC0DF; 
+}
+
+
 .containerAside:hover .asideTitulo > h2 
 {
     transform: rotate(0deg);

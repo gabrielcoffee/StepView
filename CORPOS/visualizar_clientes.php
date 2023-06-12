@@ -204,8 +204,10 @@ $login = $_SESSION["logged"];
             <div class="containerAside">
                 <div class="asideCima">
                     <button onclick="abrirModal()">Cadastrar Cliente</button>
-                    <button>Tela Estados</button>
-                    <button>Sair</button>
+                    <button onclick="telaEstado()">Tela Estados</button>
+                    <form action="PHPlogou.php" method="post">
+                    <input type="submit" name="logout" value="Sair">
+                    </form>
 
 
                 </div>
