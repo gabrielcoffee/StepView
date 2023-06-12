@@ -188,7 +188,7 @@ $login = $_SESSION["logged"];
                             }
                             else
                             {
-                                echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(".$cpf.");'>Deletar</button></td>";
+                                echo "<td class='checkBox'> <button onclick='carregarPaginaCpf(".$cpf.")'>Editar</button> <button onclick='abrirConfirmarDeletar(\"".$cpf."\");'>Deletar</button></td>";
 
                             }
                             echo "</tr>";
