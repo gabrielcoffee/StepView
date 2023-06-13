@@ -80,6 +80,11 @@ function telaEstado()
 
 }
 
+function irTelaAd()
+{
+    location.href = "tela_administracao.php"
+}
+
 
 console.log(items);
 

@@ -5,6 +5,11 @@ function irTela()
     location.href = "tela_estados.php"
 }
 
+function irTelaAdm()
+{
+    location.href = "tela_administracao.php"
+}
+
 
 
 

@@ -5,7 +5,14 @@ session_start();
 // Confere se funcionario esta logado senão envia para login
 if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["logged"] != "admin")
 {
-    header("Location: ../index.html");
+    echo "<script>";
+    echo "alert('Você não tem permissão para entrar nessa tela');";
+    //echo "window.location.href = '../index.html';";
+    echo "location.href = 'visualizar_clientes.php';";
+    echo "</script>";
+    //header("Location: ../index.html");
+    //echo "<script>alert('Você não tem permissão para entrar nessa tela');</script>";
+    //header("Location: ../index.html");
 }
 
 ?>
@@ -84,6 +91,8 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                         </div>
                         <div>
                             <input name="senha" type="password" placeholder="Senha">
+                        </div>
+                        <div>
                             <span id="error" class="error"></span><br>
                         </div>
                         <div class="botoes">
@@ -105,6 +114,7 @@ if (!isset($_SESSION["logged"]) || $_SESSION["logged"] == false || $_SESSION["lo
                 <div class="asideCima">
                     <button onclick="abrirModal()">Cadastrar Funcionário</button>
                     <button onclick="irTela()">Tela Estados</button>
+                    <button onclick="irTelaAdm()">Tela Administração</button>
                     <form action="PHPlogou.php" method="post">
                     <input type="submit" name="logout" value="Sair">
                     </form>

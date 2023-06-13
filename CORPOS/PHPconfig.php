@@ -8,5 +8,5 @@ $database = 'stepview1';
 
 
 $conn = new mysqli($server_name, $username, $password, $database);
-
+    
 ?>

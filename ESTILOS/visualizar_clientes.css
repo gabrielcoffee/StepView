@@ -203,8 +203,8 @@ td > button:hover
 
 .containerAside:hover .asideCima > button
 {
-    width: 4.5vw;
-    font-size: 0.7vw;
+    width: 4.0vw;
+    font-size: 0.5vw;
     
 }
 
@@ -276,6 +276,9 @@ td > button:hover
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
 }
 
